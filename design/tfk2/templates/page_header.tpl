@@ -1,13 +1,12 @@
-
-	<div id="wrapper">
-		<a accesskey="1" class="hidden" href="#main">Til hovedinnhold</a>
-		<a accesskey="3" class="hidden" href="#nav">Til hovedmeny</a>
+<div id="wrapper">
+    <a accesskey="1" class="hidden" href="#main">Til hovedinnhold</a>
+	<a accesskey="3" class="hidden" href="#nav">Til hovedmeny</a>
 		
 		<!-- header -->
 		<header id="header">
 			<div class="header-holder">
 				<!-- logo -->
-				<strong class="logo"><a accesskey="4" href="/">Telemark fylkeskommune</a></strong>
+				<strong class="logo"><a accesskey="4" href="/">Telemark fylkeskommune - New edition</a></strong>
 				<!-- header-frame -->
 				<div class="header-frame">
 
