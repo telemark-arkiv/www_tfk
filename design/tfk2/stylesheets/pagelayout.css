@@ -1,0 +1,130 @@
+/* PAGELAYOUT CSS - 20060522 
+
+div.corner-box
+{
+    margin: 1em auto 0 auto;
+    float: right;
+    background-color: #E2E2E2;
+    background-image: url(../images/links-bor-cont-bg.png);
+}
+
+div.corner-box div.corner-tl
+{
+    background: url(../images/links-corner-tl.png) no-repeat top left;
+}
+
+div.corner-box div.corner-tr
+{
+    background: url(../images/links-corner-tr.png) no-repeat top right;
+}
+
+div.corner-box div.corner-content
+{
+    height: 1%; /* Preventing margins on content from breaking the box (for IE) */
+    position: relative; /* Fix for IE */
+}
+
+div.corner-box div.corner-content:before, div.corner-box div.corner-content:after /* Preventing margins on content from breaking the box */
+{
+    content: "-";
+    height: 0;
+    visibility: hidden;
+    display: block; 
+    clear: both; 
+}
+
+div.corner-box div.corner-content
+{
+    padding-right: 1em;
+    padding-left: 0.5em;
+}
+
+
+div.nosidemenu div#columns
+{
+   padding-left: 0;
+}
+
+div.noextrainfo div#columns
+{
+   padding-right: 0;
+}
+*/
+/* SIDE MENU */
+
+div#sidemenu-position
+{
+    width: 14em;
+    margin-left: -14em;
+    float: left;
+    display: inline; /* Fix for IE double margin bug */
+}
+
+div#sidemenu
+{
+    padding: 0
+}
+
+div.nosidemenu div#sidemenu-position
+{
+    display: none;
+}
+
+div#sidemenu ul
+{
+    list-style-type: none;
+    margin: 0.5em 0 0.5em 0;
+}
+
+div#sidemenu ul li
+{
+    margin: 0.25em 0 0.25em 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+    background-image: none;
+}
+
+div#sidemenu div.box div.box-content
+{
+    padding-left: 0.75em;
+    padding-right: 0;
+}
+
+div#sidemenu h4
+{
+    margin: 0;
+}
+
+div#sidemenu h4 a
+{
+    color: #525345;
+    text-decoration: none;
+}
+
+div#sidemenu ul.menu-list a.selected
+{
+    font-weight: bold;
+}
+
+div#sidemenu ul.submenu-list
+{
+    list-style-type: none;
+    margin-left: 1em;
+}
+
+div#sidemenu ul.submenu-list a.selected
+{
+    font-weight: bold;
+}
+
+div#sidemenu ul.menu-list li a, div#sidemenu ul.submenu-list li a
+{
+    background-image: url(../images/sidemenu_bullet.png);
+    background-position: 0.2em 0.5em;
+    background-repeat: no-repeat;
+    padding-left: 18px;
+    display: block;
+    font-size: 0.85em;
+}
+

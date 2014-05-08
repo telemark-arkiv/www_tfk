@@ -1,0 +1,2 @@
+{def $attribute=$node.data_map.file}
+{set scope="global" $persistent_variable=hash( "redirect", concat( 'content/download/', $attribute.contentobject_id, '/', $attribute.id,'/version/', $attribute.version , '/file/', $attribute.content.original_filename|urlencode ) )}

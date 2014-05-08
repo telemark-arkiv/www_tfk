@@ -1,0 +1,16 @@
+* + html .items-block .item,
+* + html .items-area .item,
+* + html .news-list .item,
+* + html .paging .prev em,
+* + html .paging .next em{
+	display:inline;
+	zoom:1;
+}
+.search-form .btn{
+	border:none;
+	padding:1px 0 0;
+}
+header, nav, section, article, aside, footer, hgroup {
+    display: block;
+}
+

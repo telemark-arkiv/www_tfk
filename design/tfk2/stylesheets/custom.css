@@ -1,0 +1,441 @@
+body {
+    background-color: #ececea;
+}
+
+#usermenu, #usermenu a {color:#5d5d5d;text-decoration: none;}
+
+div#links
+{
+    text-align: right;
+    font-size: 0.85em;
+    font-weight: normal;
+    clear: both;
+    list-style-type:none;
+}
+div#links li
+{
+    list-style-type:none;
+}
+
+/* NAV */
+#nav .menu_3 a{
+        color:#fff;
+        padding:8px 52px 8px 6px;
+        background:url(../images/sprite.png) no-repeat 100% -193px;
+}
+#nav li.menu_3:hover a,
+#nav .menu_3 a:hover {
+        text-shadow:none;
+        background:url(../images/sprite.png) no-repeat 100% -274px;
+        color:#07325f;
+}
+#nav .has-drop-down.active a{background:url(../images/sprite.png) no-repeat 100% -370px;}
+#nav span{
+        float:left;
+        padding:15px 30px 16px;
+}
+#nav span.active {background:url(../images/arrow.gif) no-repeat 50% 100%;}
+#nav.scaling-active span{padding:15px 0 16px;}
+
+.drop-area{
+	right: -320px !important;
+	z-index: 100;
+}
+
+/* Drop small */
+.drop-area-small{
+      	width:309px !important;
+        right:-120px !important;;
+}
+.drop-small{
+       	width:217px !important;
+}
+.drop-small .arrow{
+        left:119px !important;
+}
+
+
+#size-10 {font-size:11px}
+#size-15 {font-size:14px}
+#size-20 {font-size:17px}
+selected {font-weight:bold}
+
+/* Breadcrumbs*/
+
+.breadcrumbs {
+    font-weight: bold;
+}
+
+.quote {
+    background:url(../images/bg1.png) ;
+    background-color: #dfe7ea;
+    border:1px solid #b7b8b8;
+    border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;
+    box-shadow:0 2px 0 #fafafa;
+    -webkit-box-shadow:0 2px 0 #fafafa; 
+    -moz-box-shadow:0 2px 0 #fafafa;
+    padding:21px 18px 14px;
+    font-size:14px;
+    line-height:21px;
+    color:#444441;
+    margin:0 0 22px;
+    width: 90%;
+}
+
+.infobox .quote {
+    padding: 10px;
+}
+
+/* Kolonnefiks */
+
+.content-holder .columns .column {
+    width: 42%;
+}
+
+/* Høyrejustert tekst*/
+
+td.text-right {
+    text-align: right;
+}
+
+/* Bildegalleri thumbs */
+.fb-thumb {
+    height: 75px;
+    width: 75px;
+    border: 5px solid white;
+}
+
+/* Overskrifter for infobokser */
+.contact-block .title{
+    display: block;
+    margin: 0 -2px 16px 0;
+    padding: 4px 0 5px;
+    color: #4E4E4E;
+    font: normal 21px/30px 'Times New Roman', Georgia, serif;
+    border-bottom: 1px solid #989899;
+}
+
+.top-nav li:last-child {
+    padding-right: 20px !important;
+}
+.top-nav li {
+    padding: 0 10px 0 10px !important;
+}
+
+/* Headerfix for listevisning */
+.list-header {
+    font-family: 'Times New Roman', Georgia, serif;
+}
+
+/* Headerfix for landingssider */
+
+.landingpage-header {
+    margin: 0 0 25px;
+    padding: 0 0 6px;
+    font: normal 36px/40px 'Times New Roman', Georgia, serif;
+    color: #4E4E4E;
+    border-bottom: 1px solid #989899;
+}
+
+.landingpage-sub-header {
+    margin: 0 0 5px;
+    font: normal 28px/32px 'Times New Roman', Georgia, serif;
+    color: #093461;
+}
+
+
+/* Fiks for avstand mellom elementer */
+
+.news-list {
+    margin: 0 0 35px;
+}
+
+
+/* Fiks for infoboks */
+
+
+/*
+.infobox a {
+    color: #013266;
+    text-decoration: none;
+    padding: 0 0 0 13px;
+    background: url(../images/arrow2.png) no-repeat 0 4px;
+}
+*/
+
+.infobox a {
+    color: #034D9C;
+    text-decoration: none;
+}
+
+.infobox a:hover {
+    color: #2A83D4;
+    text-decoration: none;
+}
+
+.infobox ul {
+    padding-left: 15px;
+}
+
+
+.contact-block {
+    font-size: 13px;
+    line-height: 16px;
+    color: #444;
+    margin: 0 0 10px;
+}
+
+
+/* Fiks for ingress */
+.ingress {
+    font-size: 19px;
+    line-height: 25px;
+    color: #444441;
+    margin: 0 0 20px;
+    font-weight: normal;
+}
+
+/* Fiks for h2 i artikler */
+.content-holder #content h2 {
+    border: none;
+    font: 16px/18px Arial, Helvetica, sans-serif;
+    color: #444441;
+    margin: 0px;
+    font-weight: bold;
+}
+
+/* Survey */
+.survey-view .block {
+    color: #444441;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    padding: 0 0 5px;
+    margin-top: 10px;
+}
+
+.survey-view .block label {
+    color: #444441;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0 0 10px;
+}
+
+.survey-view .block legend {
+    color: #444441;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0 0 10px;
+}
+
+.survey-view .block .survey-choices label{
+    color: #444441;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    padding: 0 0 5px;
+}
+
+.survey-view .block .survey-choices .block{
+    margin-top: 0px;
+}
+
+.survey-view .block h2 {
+    border: none;
+    font: 16px/18px Arial, Helvetica, sans-serif;
+    color: #444441;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.survey-view .block input[type="text"]{
+    width: 100%;
+}
+
+.survey-view .block textarea{
+    width: 100%;
+}
+
+.survey-view div.element {
+    padding-right: 1em;
+    float: left;
+}
+
+/* Bildegalleri*/
+
+.photos-infobox ul {
+    padding: 0;
+}
+
+.photos-infobox li {
+    list-style-type: none;
+    float: left;
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.photos-infobox .fb-thumb {
+    height: 58px;
+    width: 58px;
+}
+
+/* Ikon for stilling ledig */
+
+.tab-block .col .ledig_stilling {
+    float: left;
+    background: url(../images/stilling_ledig_icon.png) no-repeat;
+    width: 50px;
+    height: 52px;
+    padding: 5px 0 18px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+/* Overskrifter for listevisning */
+h2.title{
+    display: block;
+    margin:4px 0 13px;
+    color:#093461;
+    font:normal 21px/24px 'Times New Roman', Georgia, serif;
+    border:none;
+}
+
+.item .frame .title {
+    display: block;
+    margin:4px 0 13px;
+    color:#093461;
+    font:normal 21px/24px 'Times New Roman', Georgia, serif;
+    border:none;
+}
+
+.item .holder .title {
+    display: block;
+    margin:4px 0 13px;
+    color:#093461;
+    font:normal 21px/24px 'Times New Roman', Georgia, serif;
+    border:none;
+}
+
+.content-holder #content h2.title {
+    display: block;
+    margin:4px 0 13px;
+    color:#093461;
+    font:normal 21px/24px 'Times New Roman', Georgia, serif;
+    border:none;
+}
+
+/* Forstørre/Forminske tekst-info*/
+
+#text-resizer-info span.resize-box {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    display: none;
+    position: absolute;
+    font-size: 4em;
+    line-height: 1.6em;
+    letter-spacing: 2pt;
+    left: 0px;
+    width: 98%;
+    margin-left: 1%;
+    z-index: 10000;
+    margin-top: 14pt;
+}
+
+#text-resizer-info:hover span.resize-box {
+    display: block;
+}
+
+#text-resizer-info span.resize-text {
+    display: block;
+    padding: 20pt;
+    color: #000;
+}
+
+.text-resize {
+    text-indent: 0;
+}
+
+/* UU krav */
+#content a {
+    text-decoration: underline;
+}
+
+/* Og visuell fiks pga UU krav ;-) */
+#content .tabset a {
+    text-decoration: none;
+}
+
+#content h2 a {
+    text-decoration: none;
+}
+
+/* montage */
+.am-wrapper{
+    float:left;
+    position:relative;
+    overflow:hidden;
+}
+.am-wrapper img{
+    position:absolute;
+    outline:none;
+}
+
+/* Fiks for søkeresultat */
+
+.paging {
+padding: 0;
+margin: 0 0 54px 0;
+list-style: none;
+overflow: hidden;
+position: relative;
+width: 100%;
+height: 32px;
+font-size: 16px;
+line-height: 32px;
+color: #595959;
+text-align: center;
+border: 1px solid #b5b4b4;
+border-radius: 11px;
+-moz-border-radius: 11px;
+-webkit-border-radius: 11px;
+box-shadow: 0 1px 2px #fff;
+-webkit-box-shadow: 0 1px 2px #fff;
+-moz-box-shadow: 0 1px 2px #fff;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: #f6f6f5;
+background: -moz-linear-gradient(top, #f6f6f5 0%, #e7e9e9 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f5), color-stop(100%,#e7e9e9));
+background: -webkit-linear-gradient(top, #f6f6f5 0%,#e7e9e9 100%);
+background: -o-linear-gradient(top, #f6f6f5 0%,#e7e9e9 100%);
+background: -ms-linear-gradient(top, #f6f6f5 0%,#e7e9e9 100%);
+background: linear-gradient(top, #f6f6f5 0%,#e7e9e9 100%);
+behavior: url(css/PIE.htc);
+}
+
+
+.results .frame {
+    margin-left: 175px;
+}
+
+/* Facebook like-boks */
+
+.facebookOuter {
+    background: transparent; 
+    width:220px; 
+    padding:0;
+    height:330px;
+    border:0;
+  }
+ .facebookInner {
+    height:330px;
+    overflow: hidden;
+  }
+
+/* Add this - breddefix */
+.addthis_16x16_style {
+    width: 100px;
+}
