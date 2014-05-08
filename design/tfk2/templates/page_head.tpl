@@ -54,7 +54,7 @@
     <!--<meta name="MSSmartTagsPreventParsing" content="TRUE" />-->
     <meta name="generator" content="eZ Publish" />
 
-    <link rel="Home" href="/" title="Telemark fylkeskommune" />
+    <link rel="Home" href="/" title="Telemark fylkeskommune - new edition" />
     <link rel="Index" href="/" />
     <link rel="Search" href="/content/search" title="Søk Telemark fylkeskommune" />
     <link rel="Shortcut icon" href="/extension/vp_tfk/design/tfk/images/favicon.ico" type="image/x-icon" />
