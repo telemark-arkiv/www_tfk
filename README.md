@@ -1,4 +1,3 @@
-www_tfk
-=======
+#www Telemark fylkeskommune
 
-Templates mm for www.telemark.no
+Extensions for www.telemark.no
