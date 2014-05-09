@@ -82,9 +82,9 @@
 {include uri='design:page_head_script.tpl'}
 
 </head>
-
+<body>
 <!-- Change between "sidemenu"/"nosidemenu" and "extrainfo"/"noextrainfo" to switch display of side columns on or off  -->
-<div id="page" class="{$pagestyle}">
+{*<div id="page" class="{$pagestyle}">*}
 
   {if and( is_set( $pagedata.persistent_variable.extra_template_list ),
              $pagedata.persistent_variable.extra_template_list|count() )}
@@ -285,7 +285,7 @@
   {include uri='design:page_footer.tpl'}
   <!-- Footer area: END -->
 
-</div>
+{*</div>*}
 <!-- Complete page area: END -->
 
 {*
