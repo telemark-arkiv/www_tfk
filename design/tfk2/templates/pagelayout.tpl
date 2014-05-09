@@ -92,6 +92,8 @@
       {include uri=concat('design:extra/', $extra_template)}
     {/foreach}
   {/if}
+<div class="menu-container">
+      <div id="mp-pusher" class="menu-pusher">
 
   <!-- Header area: START -->
   {include uri='design:page_header.tpl'}
