@@ -5,11 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-{*
-{def $basket_is_empty   = cond( $current_user.is_logged_in, fetch( shop, basket ).is_empty, 1 )
-     $user_hash         = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
-*}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {include uri='design:page_head_displaystyles.tpl'}
 
@@ -40,25 +36,6 @@
 {/if}
 
 {def $dennenoden=fetch( 'content', 'node', hash( 'node_id', $current_node_id ) )}
-
-{*
-  <!-- Test for arve av infobokser-->
-  <!-- Dennenoden patharray -->
-  {foreach $dennenoden.path_array as $pa}
-  <!-- PA: {$pa} --> 
-  {/foreach}
-
-  {def $unfiltered_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $dennenoden.path_array,
-                                                        'class_filter_type', 'include',
-                                                        'class_filter_array', array( 'infobox' ) ) ) }
-  {foreach $unfiltered_infoboxes as $ib}
-    <!-- pre filter {$ib.node_id} -->
-    <!-- inherit: {$ib.data_map.inherit.content} -->
-    {if or($ib.data_map.inherit.content, eq($ib.parent_node_id, $current_node_id))}
-      <!-- post filter {$ib.node_id} -->
-    {/if}
-  {/foreach}
-*}
 
 {* Sjekker om dette er en folder og om den i så fall har bannerbilde *}
 
@@ -105,13 +82,6 @@
 {include uri='design:page_head_script.tpl'}
 
 </head>
-{* To simplify IE css targeting. IE9 conforms, so threat as rest *}
-<!--[if lt IE 7 ]><body class="ie6"><![endif]-->
-<!--[if IE 7 ]>   <body class="ie7"><![endif]-->
-<!--[if IE 8 ]>   <body class="ie8"><![endif]-->
-<!--[if (gt IE 8)|!(IE)]><!--><body><!--<![endif]-->
-<!-- Complete page area: START -->
-<noscript>Javascript må være aktivert for at denne siden skal fungere optimalt</noscript>
 
 <!-- Change between "sidemenu"/"nosidemenu" and "extrainfo"/"noextrainfo" to switch display of side columns on or off  -->
 <div id="page" class="{$pagestyle}">
@@ -318,10 +288,6 @@
 </div>
 <!-- Complete page area: END -->
 
-<!-- Footer script area: START -->
-{include uri='design:page_footer_script.tpl'}
-<!-- Footer script area: END -->
-
 {*
 {/cache-block}
 *}
@@ -329,4 +295,7 @@
 {* This comment will be replaced with actual debug report (if debug is on). *}
 <!--DEBUG_REPORT-->
 </body>
+<!-- Footer script area: START -->
+{include uri='design:page_footer_script.tpl'}
+<!-- Footer script area: END -->
 </html>
