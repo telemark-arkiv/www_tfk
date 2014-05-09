@@ -12,8 +12,10 @@
 -->
 </script>
 {/if}
+*}
 {* Override this template and place javascript based statestics here (like Google Analytics) *}
 
+{*
 {ezscript_require( array( 'ezjsc::jquery', 'ezjsc::yui3', 'ezjsc::yui3io', 'ezjsc::yui2', 'ezajaxsearch.js', 'ezajax_autocomplete.js' ) )}
 <script>
 jQuery('#ezautocompletecontainer').css('width', jQuery('input#SearchText').width() + 60);
