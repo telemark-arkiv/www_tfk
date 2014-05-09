@@ -1,5 +1,4 @@
-
-        <header role="banner" class="page-header">
+<header role="banner" class="page-header">
           <div class="page-header__content-wrapper js-headroom">
             <div class="constrained">
               <div class="page-header__content"><a href="#main" class="page-header__skip-to visuallyhidden-focusable">Hovedinnhold</a><a id="menu-trigger" href="#footer-menu" class="menu-trigger icon--menu-mobile">Meny</a><a href="/" class="page-header__logo"><img src="http://localhost:9000/img/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"/></a>
@@ -104,7 +103,7 @@
                 </ul>
               </div>
             </nav>
-        </header>
+</header>
 
 {*
 
