@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="/design/css/main-5d648cfa.css"><!--[if lte IE 8]>
+    <link rel="stylesheet" href="/design/css/no-mq-5aeb01e6.css"><![endif]-->
+
+
+
+{*
 {if is_unset( $load_css_file_list )}
     {def $load_css_file_list = true()}
 {/if}
@@ -14,4 +20,4 @@
     {/foreach *}
 {/if}
 </style>
-
+*}
