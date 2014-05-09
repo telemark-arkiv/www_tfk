@@ -1,0 +1,3895 @@
+@charset "UTF-8";
+/*  Breakpoint
+
+    Her definerer vi de "globale" media-query-breddene/høydene som vi bruker i løsningen.
+
+    Vi "pre-fixer" variablen med "$breakpoint" slik at vi unngår evt. konflikter med andre variabler.
+
+    Vi konverterer pixelverdiene til em. Det er anbefalt å bruke relative enheter til mediaqueries slik
+    at media-queries blir justert ikke bare av brukerens skjermbredde, men også skriftstørrelsen han bruker.
+    Prøv selv å justere opp og ned skriftstørrelsen på demo-sidene og se hvordan elementene tilpasser seg.
+*/
+/*  Color
+
+    Her definerer vi de "globale" fargene som brukes gjennomgående.
+
+    Vi "pre-fixer" variablen med "$color" slik at vi unngår evt. konflikter med andre variabler.
+
+    Vi har laget en liten hjelpefunksjon slik at vi kan hente en farge fra standard-farge-settet med: color-get({farge})
+
+    $color-sets er en array med farge-set hvor man definerer:
+      * bg: Bakgrunnsfarge
+      * text: Tekstfarge
+      * link: Lenkefarge
+      * link-underline: Farge på lenkers understrek
+      * border: Rammefarge
+      * border--light: Lysere rammefarge
+*/
+/* line 37, ../../scss/components/_btn.scss */
+.pagination__prev, .pagination__next, .pagination__list__link, .see-more {
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bec8d3;
+  padding: 0.4375em 0.9375em;
+  background: transparent;
+  color: #0756ad;
+  cursor: pointer;
+  *display: inline;
+  zoom: 1;
+}
+/* line 18, ../../scss/components/_btn.scss */
+.pagination__prev:hover, .pagination__next:hover, .pagination__list__link:hover, .see-more:hover, .pagination__prev:focus, .pagination__next:focus, .pagination__list__link:focus, .see-more:focus, .pagination__prev:active, .pagination__next:active, .pagination__list__link:active, .see-more:active {
+  border-color: #0756ad;
+}
+
+/* line 41, ../../scss/components/_btn.scss */
+.pagination__list__link--active {
+  background-color: #1e4774;
+  color: #f2f2f1;
+}
+/* line 29, ../../scss/components/_btn.scss */
+.pagination__list__link--active, .pagination__list__link--active:hover, .pagination__list__link--active:focus, .pagination__list__link--active:active {
+  border-color: #1e4774;
+}
+
+/**
+ * Ref: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+/* line 21, ../../scss/components/_clearfix.scss */
+.breadcrumb, .clearfix, .content, .grid,
+.grid--12, .main, .menu, .nav, .page-footer__block-right, .page-footer__box, .page-header, .page-header__content, .pagination, .search-result, .search-result__item, .see-more, .slider__slides, .social-block, .social-links, .tabs, .tabs__bar, .tabs__content__item, .top-image__text {
+  *zoom: 1;
+}
+/* line 10, ../../scss/components/_clearfix.scss */
+.breadcrumb:before, .clearfix:before, .content:before, .grid:before,
+.grid--12:before, .main:before, .menu:before, .nav:before, .page-footer__block-right:before, .page-footer__box:before, .page-header:before, .page-header__content:before, .pagination:before, .search-result:before, .search-result__item:before, .see-more:before, .slider__slides:before, .social-block:before, .social-links:before, .tabs:before, .tabs__bar:before, .tabs__content__item:before, .top-image__text:before, .breadcrumb:after, .clearfix:after, .content:after, .grid:after,
+.grid--12:after, .main:after, .menu:after, .nav:after, .page-footer__block-right:after, .page-footer__box:after, .page-header:after, .page-header__content:after, .pagination:after, .search-result:after, .search-result__item:after, .see-more:after, .slider__slides:after, .social-block:after, .social-links:after, .tabs:after, .tabs__bar:after, .tabs__content__item:after, .top-image__text:after {
+  content: " ";
+  display: table;
+}
+/* line 16, ../../scss/components/_clearfix.scss */
+.breadcrumb:after, .clearfix:after, .content:after, .grid:after,
+.grid--12:after, .main:after, .menu:after, .nav:after, .page-footer__block-right:after, .page-footer__box:after, .page-header:after, .page-header__content:after, .pagination:after, .search-result:after, .search-result__item:after, .see-more:after, .slider__slides:after, .social-block:after, .social-links:after, .tabs:after, .tabs__bar:after, .tabs__content__item:after, .top-image__text:after {
+  clear: both;
+}
+
+/* line 19, ../../scss/components/_constrained.scss */
+.constrained, .constrained-content {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 71.25em;
+  _width: 71.25em;
+}
+
+/*
+ * Shortcut for adding BEM element to selector
+ * @include e(element) { display: block; }
+ */
+/*  Hyphens
+    Shorthand to add markup for breaking up long words
+    http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+*/
+/* line 19, ../../scss/components/_hyphens.scss */
+* {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/*  Inline block
+    
+    Creates cross-browser inline-block behavior
+*/
+/*
+ * Shortcut for adding BEM modifier to selector
+ * @include m(element) { display: block; }
+ */
+/* line 10, ../../scss/components/_nolist.scss */
+.breadcrumb, .calendar-list, .grid,
+.grid--12, .pagination__list, .search-result {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* line 26, ../../scss/components/_visuallyhidden.scss */
+.visuallyhidden {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+}
+
+/* line 30, ../../scss/components/_visuallyhidden.scss */
+.visuallyhidden-focusable {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+}
+/* line 14, ../../scss/components/_visuallyhidden.scss */
+.visuallyhidden-focusable:active, .visuallyhidden-focusable:focus {
+  position: static;
+  margin: 0;
+  clip: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+/* normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* normalize.scss v2.1.3 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 49, ../../scss/base/_base.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+picture,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 69, ../../scss/base/_base.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 84, ../../scss/base/_base.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 94, ../../scss/base/_base.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ */
+/* line 111, ../../scss/base/_base.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  /* Establish a vertical rhythm unit using $base-line-height. */
+  line-height: 1.5em;
+}
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+/* line 129, ../../scss/base/_base.scss */
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 141, ../../scss/base/_base.scss */
+body {
+  margin: 0;
+  background-color: #f2f2f1;
+  color: #333333;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 155, ../../scss/base/_base.scss */
+a {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: #bec8d3;
+  background: transparent;
+  text-decoration: none;
+  color: #0756ad;
+}
+/* line 163, ../../scss/base/_base.scss */
+a:hover, a:focus, a:active {
+  border-color: #0756ad;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 182, ../../scss/base/_base.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+/* line 195, ../../scss/base/_base.scss */
+p,
+pre {
+  margin: 0.5em 0;
+}
+
+/* line 200, ../../scss/base/_base.scss */
+blockquote {
+  /* Set 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1em 0;
+  border-left: 0.5em solid #dde2e7;
+  padding: 0 1em;
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 213, ../../scss/base/_base.scss */
+h1, h2, .top-image--large .top-image__header, h3 {
+  font-weight: normal;
+  border-bottom: 1px solid #bec8d3;
+}
+
+/* line 218, ../../scss/base/_base.scss */
+h1 {
+  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 2em;
+  line-height: 1.25em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 0.25em;
+  1-bottom: 0.25em;
+}
+
+/* line 234, ../../scss/base/_base.scss */
+h2, .top-image--large .top-image__header {
+  margin-bottom: -1px;
+  font-size: 1.5em;
+  line-height: 1.33333em;
+  margin-top: 0.66667em;
+}
+
+/* line 243, ../../scss/base/_base.scss */
+h3 {
+  margin-bottom: -1px;
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin-top: 0.8547em;
+}
+
+/* line 252, ../../scss/base/_base.scss */
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* line 258, ../../scss/base/_base.scss */
+h5 {
+  font-size: 0.83em;
+  line-height: 1.80723em;
+  margin-top: 0.60241em;
+  margin-bottom: 0.60241em;
+}
+
+/* line 264, ../../scss/base/_base.scss */
+h6 {
+  font-size: 0.67em;
+  line-height: 1.49254em;
+  margin-top: 0.74627em;
+  margin-bottom: 0.74627em;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 275, ../../scss/base/_base.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/* line 278, ../../scss/base/_base.scss */
+abbr[title]:not(:hover) {
+  border-bottom-color: #bec8d3;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 287, ../../scss/base/_base.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 296, ../../scss/base/_base.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 304, ../../scss/base/_base.scss */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 313, ../../scss/base/_base.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 322, ../../scss/base/_base.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 342, ../../scss/base/_base.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 357, ../../scss/base/_base.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 365, ../../scss/base/_base.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 373, ../../scss/base/_base.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 381, ../../scss/base/_base.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 385, ../../scss/base/_base.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/**
+ * Address margins set differently in IE 6/7.
+ */
+/* line 398, ../../scss/base/_base.scss */
+dl,
+menu,
+ol,
+ul {
+  margin: 0.5em 0;
+}
+
+/* line 408, ../../scss/base/_base.scss */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/* line 415, ../../scss/base/_base.scss */
+dd {
+  margin: 0 0 0 2em;
+}
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+/* line 423, ../../scss/base/_base.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 2em;
+}
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+/* line 435, ../../scss/base/_base.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 450, ../../scss/base/_base.scss */
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  /* Improve image quality when scaled in IE 7. */
+  -ms-interpolation-mode: bicubic;
+}
+/* line 460, ../../scss/base/_base.scss */
+picture img {
+  display: block;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 469, ../../scss/base/_base.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 481, ../../scss/base/_base.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+/* line 494, ../../scss/base/_base.scss */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 503, ../../scss/base/_base.scss */
+fieldset {
+  margin: 0 2px;
+  /* Apply borders and padding that keep the vertical rhythm. */
+  border-color: #c0c0c0;
+  border-top-width: 0.0625em;
+  border-top-style: solid;
+  padding-top: 0.1125em;
+  border-bottom-width: 0.0625em;
+  border-bottom-style: solid;
+  padding-bottom: 0.2625em;
+  border-left-width: 0.0625em;
+  border-left-style: solid;
+  padding-left: 0.25em;
+  border-right-width: 0.0625em;
+  border-right-style: solid;
+  padding-right: 0.25em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+/* line 519, ../../scss/base/_base.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ * 4. Improve appearance and consistency with IE 6/7.
+ */
+/* line 534, ../../scss/base/_base.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  vertical-align: baseline;
+  /* 4 */
+  *vertical-align: middle;
+  /* 4 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 553, ../../scss/base/_base.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 565, ../../scss/base/_base.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+/* line 580, ../../scss/base/_base.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 596, ../../scss/base/_base.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+/* line 608, ../../scss/base/_base.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 624, ../../scss/base/_base.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 634, ../../scss/base/_base.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 643, ../../scss/base/_base.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 654, ../../scss/base/_base.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 667, ../../scss/base/_base.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*  kbd
+    Keyboard elementet brukes f.eks. til tastatur-snarveier.
+
+    <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>del</kbd>
+*/
+/* line 7, ../../scss/base/_kbd.scss */
+kbd {
+  border-width: 1px 1px 3px 1px;
+  border-style: solid;
+  border-color: #bec8d3;
+  padding: 0 .2em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: inset 0 2px 0 0 white;
+  -webkit-box-shadow: inset 0 2px 0 0 white;
+  box-shadow: inset 0 2px 0 0 white;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 7, ../../scss/base/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 14, ../../scss/base/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 19, ../../scss/base/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 23, ../../scss/base/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  /* line 31, ../../scss/base/_print.scss */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 36, ../../scss/base/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 42, ../../scss/base/_print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 46, ../../scss/base/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 51, ../../scss/base/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  /* line 59, ../../scss/base/_print.scss */
+  p,
+  h2,
+  .top-image--large .top-image__header,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 66, ../../scss/base/_print.scss */
+  h2, .top-image--large .top-image__header,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/*  Article
+    Brukes på artikkelinnhold.
+    
+    Article header legger på margins slik at forfatterinfo etc. får grei avstand
+
+    <article>
+      <header class="article__header">
+        <h1>Overskrift</h1>
+        <span class="sidenote">Av: Navn Navnesen</span>
+      </header>
+    </article>
+*/
+/* line 15, ../../scss/modules/_article.scss */
+.article__header {
+  margin-bottom: 0.5em;
+}
+/* line 18, ../../scss/modules/_article.scss */
+.article__header h1 {
+  margin-bottom: 0.25em;
+}
+
+/*  Breakcrumb
+    Brødsmulesti. Liste over vertical sidestruktur for gitt side.
+
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item">
+        <a href="/" class="breadcrumb__item__link">Forside</a>
+        <div class="breadcrumb__item__separator">/</div>
+      </li>
+      <li class="breadcrumb__item">
+        <a href="/aktuelt" class="breadcrumb__item__link">Aktuelt</a>
+        <div class="breadcrumb__item__separator">/</div>
+      </li>
+      <li class="breadcrumb__item">
+        <div class="breadcrumb__item__link breadcrumb__item__link--active">Vil støtte «Kampen om tungtvannet»</div>
+      </li>
+    </ul>
+*/
+/* line 23, ../../scss/modules/_breadcrumb.scss */
+.breadcrumb__item, .breadcrumb__item__link, .breadcrumb__item__separator {
+  float: left;
+}
+
+/* line 27, ../../scss/modules/_breadcrumb.scss */
+.breadcrumb__item__link, .breadcrumb__item__separator {
+  margin-right: 5px;
+}
+
+/* line 31, ../../scss/modules/_breadcrumb.scss */
+.breadcrumb {
+  margin: 0.66667em 0;
+  font-size: 0.75em;
+  line-height: 1.33333em;
+}
+
+/* line 49, ../../scss/modules/_breadcrumb.scss */
+.breadcrumb__item__link--active {
+  margin-right: 0;
+}
+
+/* line 53, ../../scss/modules/_breadcrumb.scss */
+.breadcrumb__item__separator {
+  color: #cccccc;
+}
+
+/*  Byline
+    Ingress. Bruk den der hvor første avsnitt skal framheves, som i begynnelsen av en artikkel.
+
+    <p class="byline">Dette er en ingeress</p>
+    <p>Dette er et vanlig avsnitt</p>
+*/
+/* line 10, ../../scss/modules/_byline.scss */
+.byline {
+  margin: 0.4em 0;
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+/*  #Calendar list
+    
+    Eksempel: http://localhost:9000/vaare-tjenester/folkehelse/hva-skjer.html
+
+    Brukes til listevisning av datoer.
+
+    <ul class="calendar-list">
+      <li class="calendar-list__item calendar-list__item--expired grid__item grid__item--3-6">
+        <time datetime="2014-04-03" title="3. april 2014" class="calendar-list__sheet"><span class="calendar-list__sheet__month">Apr</span><span class="calendar-list__sheet__day">3</span></time>
+        <div class="calendar-list__desc">
+          <h3 class="calendar-list__desc__header"><a href="/Vaare-tjenester/Folkehelse/Hva-skjer2/Nettverk-030414-03.-april-2014-11-00-00">Folkehelsenettverket, Skien</a></h3>
+        </div>
+      </li>
+      <li class="calendar-list__item">
+        <time datetime="2014-04-24" title="24. april 2014" class="calendar-list__sheet">
+          <span class="calendar-list__sheet__month">Apr</span>
+          <span class="calendar-list__sheet__day">24</span>
+        </time>
+        <div class="calendar-list__desc">
+          <h3 class="calendar-list__desc__header">
+            <a href="/Vaare-tjenester/Folkehelse/Hva-skjer2/Folkehelsesamling-24.-april-2014-00-00-00">Folkehelsesamling, Oslo</a>
+          </h3>
+          <div class="calendar-list__desc__intro sidenote">24. - 24. april</div>
+        </div>
+      </li>
+    </ul>
+
+
+    Kombiner med grid for å fordele datoene på flere kolonner
+
+    <ul class="calendar-list grid grid--6">
+      <li class="calendar-list__item grid__item grid__item--3-6">
+        <time datetime="2014-04-23" title="23. april 2014" class="calendar-list__sheet"><span class="calendar-list__sheet__month">Apr</span><span class="calendar-list__sheet__day">23</span></time>
+        <div class="calendar-list__desc">
+          <h3 class="calendar-list__desc__header"><a href="/Vaare-tjenester/Folkehelse/Hva-skjer2/Kantinering-23.-april-2014-00-00-00">Kantinering, Skien</a></h3>
+        </div>
+      </li>
+      <li class="calendar-list__item grid__item grid__item--3-6">
+        <time datetime="2014-04-24" title="24. april 2014" class="calendar-list__sheet"><span class="calendar-list__sheet__month">Apr</span><span class="calendar-list__sheet__day">24</span></time>
+        <div class="calendar-list__desc">
+          <h3 class="calendar-list__desc__header"><a href="/Vaare-tjenester/Folkehelse/Hva-skjer2/Folkehelsesamling-24.-april-2014-00-00-00">Folkehelsesamling, Oslo</a></h3>
+          <div class="calendar-list__desc__intro sidenote">24. - 24. april</div>
+        </div>
+      </li>
+    </ul>
+
+*/
+/* line 57, ../../scss/modules/_calendar-list.scss */
+.calendar-list__item {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* line 64, ../../scss/modules/_calendar-list.scss */
+.calendar-list__sheet {
+  float: left;
+  margin-right: 1em;
+  border: 1px solid #bec8d3;
+  padding: 0 4px;
+  width: 2.5em;
+  text-align: center;
+}
+/* line 72, ../../scss/modules/_calendar-list.scss */
+.calendar-list__item--expired .calendar-list__sheet {
+  border-color: #e6e6e4;
+  background-color: #e6e6e4;
+}
+
+/* line 78, ../../scss/modules/_calendar-list.scss */
+.calendar-list__sheet__month {
+  display: block;
+  border-bottom: 1px solid #dde2e7;
+  margin-bottom: -1px;
+  font-family: Verdana, Geneva, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.625em;
+  line-height: 1.6em;
+}
+/* line 87, ../../scss/modules/_calendar-list.scss */
+.calendar-list__item--expired .calendar-list__sheet__month {
+  border-bottom-color: #bec8d3;
+}
+
+/* line 92, ../../scss/modules/_calendar-list.scss */
+.calendar-list__sheet__day {
+  display: block;
+  padding: 0.4375em 0;
+  font-weight: bold;
+}
+/* line 97, ../../scss/modules/_calendar-list.scss */
+.calendar-list__item--expired .calendar-list__sheet__day {
+  font-weight: normal;
+}
+
+/* line 102, ../../scss/modules/_calendar-list.scss */
+.calendar-list__desc {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+/* line 107, ../../scss/modules/_calendar-list.scss */
+.calendar-list__desc__header {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+/* line 113, ../../scss/modules/_calendar-list.scss */
+.calendar-list__desc__intro {
+  margin: 0.5em 0;
+}
+
+/*  #Calendar
+    
+    Eksempel: http://localhost:9000/vaare-tjenester/folkehelse/hva-skjer.html
+
+    Kalender for månedsoversikt
+
+    <table class="calendar">
+      <thead class="calendar__head">
+        <tr>
+          <th colspan="7">
+            <div class="media__img"><a href="#" class="calendar__head__nav"><i class="calendar__head__nav__icon icon--menu-arrow-left"><span class="visuallyhidden">Mars 2014</span></i></a></div>
+            <div class="media__img--right"><a href="#" class="calendar__head__nav"><i class="calendar__head__nav__icon icon--menu-arrow-right"><span class="visuallyhidden">Mai 2014</span></i></a></div>
+            <div class="media__bd">April 2014</div>
+          </th>
+        </tr>
+        <tr>
+          <th scope="col" class="calendar__day"><abbr title="Mandag">Man</abbr></th>
+          <th scope="col" class="calendar__day"><abbr title="Tirsdag">Tir</abbr></th>
+          <th scope="col" class="calendar__day"><abbr title="Onsdag">Ons</abbr></th>
+          <th scope="col" class="calendar__day"><abbr title="Torsdag">Tor</abbr></th>
+          <th scope="col" class="calendar__day"><abbr title="Fredag">Fre</abbr></th>
+          <th scope="col" class="calendar__day calendar__day--weekend"><abbr title="Lørdag">Lør</abbr></th>
+          <th scope="col" class="calendar__day calendar__day--weekend"><abbr title="Søndag">Søn</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="calendar__day calendar__day--other-month">
+            <time datetime="2014-03-31" title="31. Mars 2014">31</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-01" title="1. April 2014">1</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-02" title="2. April 2014">2</time>
+          </td>
+          <td class="calendar__day"><a href="#" class="calendar__day__link">
+              <time datetime="2014-04-03" title="3. April 2014">3</time></a></td>
+          <td class="calendar__day">
+            <time datetime="2014-04-04" title="4. April 2014">4</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-05" title="5. April 2014">5</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-06" title="6. April 2014">6</time>
+          </td>
+        </tr>
+        <tr>
+          <td class="calendar__day">
+            <time datetime="2014-04-07" title="7. April 2014">7</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-08" title="8. April 2014">8</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-09" title="9. April 2014">9</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-10" title="10. April 2014">10</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-11" title="11. April 2014">11</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-12" title="12. April 2014">12</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-13" title="13. April 2014">13</time>
+          </td>
+        </tr>
+        <tr>
+          <td class="calendar__day">
+            <time datetime="2014-04-14" title="14. April 2014">14</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-15" title="15. April 2014">15</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-16" title="16. April 2014">16</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-17" title="17. April 2014">17</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-18" title="18. April 2014">18</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-19" title="19. April 2014">19</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-20" title="20. April 2014">20</time>
+          </td>
+        </tr>
+        <tr>
+          <td class="calendar__day">
+            <time datetime="2014-04-21" title="21. April 2014">21</time>
+          </td>
+          <td class="calendar__day">
+            <time datetime="2014-04-22" title="22. April 2014">22</time>
+          </td>
+          <td class="calendar__day"><a href="#" class="calendar__day__link">
+              <time datetime="2014-04-23" title="23. April 2014">23</time></a></td>
+          <td class="calendar__day calendar__day--today"><a href="#" class="calendar__day__link">
+              <time datetime="2014-04-24" title="24. April 2014">24</time></a></td>
+          <td class="calendar__day">
+            <time datetime="2014-04-25" title="25. April 2014">25</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-26" title="26. April 2014">26</time>
+          </td>
+          <td class="calendar__day calendar__day--weekend">
+            <time datetime="2014-04-27" title="27. April 2014">27</time>
+          </td>
+        </tr>
+        <tr>
+          <td class="calendar__day">
+            <time datetime="2014-04-28" title="28. April 2014">28</time>
+          </td>
+          <td class="calendar__day"><a href="#" class="calendar__day__link">
+              <time datetime="2014-04-29" title="29. April 2014">29</time></a></td>
+          <td class="calendar__day"><a href="#" class="calendar__day__link">
+              <time datetime="2014-04-30" title="30. April 2014">30</time></a></td>
+          <td class="calendar__day calendar__day--other-month">
+            <time datetime="2014-05-01" title="1. Mai 2014">1</time>
+          </td>
+          <td class="calendar__day calendar__day--other-month">
+            <time datetime="2014-05-02" title="2. Mai 2014">2</time>
+          </td>
+          <td class="calendar__day calendar__day--other-month calendar__day--weekend">
+            <time datetime="2014-05-03" title="3. Mai 2014">3</time>
+          </td>
+          <td class="calendar__day calendar__day--other-month calendar__day--weekend">
+            <time datetime="2014-05-04" title="4. Mai 2014">4</time>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+*/
+/* line 145, ../../scss/modules/_calendar.scss */
+.calendar {
+  margin: 0.9375em auto;
+  border: 1px solid #bec8d3;
+  width: 100%;
+  max-width: 25em;
+  text-align: center;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+
+/* line 155, ../../scss/modules/_calendar.scss */
+.calendar__head {
+  font-size: 0.75em;
+}
+/* line 159, ../../scss/modules/_calendar.scss */
+.calendar__head, .calendar__head .calendar__day {
+  line-height: 1.66667em;
+}
+/* line 164, ../../scss/modules/_calendar.scss */
+.calendar__head abbr {
+  border-bottom: 0;
+}
+
+/* line 168, ../../scss/modules/_calendar.scss */
+.calendar__head__nav__icon {
+  display: block;
+  width: 24px;
+  height: 22px;
+  background-position: 50% 50%;
+}
+
+/* line 175, ../../scss/modules/_calendar.scss */
+.calendar__day {
+  border: 1px solid transparent;
+  line-height: 1.75em;
+}
+
+/* line 180, ../../scss/modules/_calendar.scss */
+.calendar__day--today {
+  border-color: #bec8d3;
+}
+
+/* line 184, ../../scss/modules/_calendar.scss */
+.calendar__day--weekend {
+  color: #d00d0d;
+}
+
+/* line 188, ../../scss/modules/_calendar.scss */
+.calendar__day--other-month {
+  color: #737373;
+}
+/* line 191, ../../scss/modules/_calendar.scss */
+.calendar__day--other-month.calendar__day--weekend {
+  color: #f66767;
+}
+
+/*  #Clearfix
+    Use to make container clear internal floats, similar to overflow: hidden, but without the obvious drawback.
+
+    Can also use `@include clearfix;`, or `@extend %clearfix;` in other modules
+
+    <div class="clearfix">
+      <div style="float: left;">Floated content</div>
+    </div>
+*/
+/*  #Constrained
+    
+    Brukes til å sentrere innhold på siden
+
+    <div class="constrained">Sentrert innhold</div>
+
+    <div class="constrained-content">Sentrert innhold med vertikalt mellomrom</div>
+
+    <div class="highlight">
+      <div class="constrained">Sentrert innhold med bakgrunn i fullbredde</div>
+    </div>
+*/
+/* line 18, ../../scss/modules/_constrained.scss */
+.constrained-content {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* line 3, ../../scss/modules/_content.scss */
+.content {
+  height: 100%;
+  overflow: auto;
+}
+
+/*  #Font adjust
+
+    Brukes i header til å informere bruker om hvordan man justerer tekststørrelsen på siden (ref. Difi-krav)
+
+    Anbefaler at den wrappes i en lenke som lenker til en side med mer utfyllende informasjon, men dette er ikke nødvendig.
+
+    `.js-font-adjust` er en javascript hook som ikke skal brukes til styling
+    
+    <a href="/hvordan-justere-tesktstoerrelsen.html">
+      <abbr class="font-adjust js-font-adjust" title="Hvordan justere tekststørrelsen?">
+        <span class="font-adjust__char--small">a</span> → <span class="font-adjust__char--large">a</span>
+      </abbr>
+    </a>
+ */
+/* line 16, ../../scss/modules/_font-adjust.scss */
+.font-adjust__char--large {
+  font-size: 1.33333em;
+  line-height: 1em;
+}
+
+/* line 21, ../../scss/modules/_font-adjust.scss */
+.font-adjust__message {
+  position: absolute;
+  display: none;
+  top: 0.88889em;
+  left: 0;
+  padding: 0.88889em;
+  width: 100%;
+  background: #f2f2f1;
+  z-index: 2000;
+  box-sizing: border-box;
+  font-size: 2.25em;
+  line-height: 1.11111em;
+}
+
+/* line 37, ../../scss/modules/_font-adjust.scss */
+.font-adjust__message--active {
+  display: block;
+}
+
+/*  #Grid
+
+    Brukes til å fordele innhold på flere kolonner
+
+    Eksempel: http://localhost:9000/politikk/politisk-ledelse.html
+
+    Definer en container med klassen `grid` og `grid--{X}` hvor X er antall kolonner bred container er (full bredde er 12 kolonner)
+    Definer underelementer med klassen `grid__item` og `grid__item--Y-X` hvor Y er hvor mange kolonner innholde skal ta og X er det samme som ovenfor
+
+    <div class="grid grid--9">
+      <div class="grid__item grid__item--3-9 media item item--horizontal">
+        Kolonne 1/3
+      </div>
+      <div class="grid__item grid__item--3-9 media item item--horizontal">
+        Kolonne 2/3
+      </div>
+      <div class="grid__item grid__item--3-9 media item item--horizontal">
+        Kolonne 3/3
+      </div>
+    </div>
+*/
+/*
+ *  Default is 12 col grid (full page width)
+ */
+@media (min-width: 37.5em) {
+  /* line 30, ../../scss/modules/_grid.scss */
+  .grid,
+  .grid--12 {
+    margin-right: -1.38889%;
+    margin-left: -1.38889%;
+  }
+}
+
+/*
+ *  Hvem the grid consists soley of images, they require som additional styling to get the right appearance
+ */
+/* line 46, ../../scss/modules/_grid.scss */
+.grid--images a,
+.grid--images img {
+  display: block;
+  float: left;
+}
+/* line 52, ../../scss/modules/_grid.scss */
+.grid--images a {
+  border: 1px solid transparent;
+}
+/* line 55, ../../scss/modules/_grid.scss */
+.grid--images a:hover, .grid--images a:focus {
+  border-color: #0756ad;
+}
+
+/*
+ *  6 columns wide in 12 column wide container (2 cols per row)
+ */
+@media (min-width: 37.5em) {
+  /* line 65, ../../scss/modules/_grid.scss */
+  .grid__item--6-12 {
+    width: 47.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    width: 47.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--6-12:nth-child(2n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--6-12:nth-child(2n + 2) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  4 columns wide in 12 column wide container (3 cols per row)
+ */
+@media (min-width: 37.5em) and (max-width: 56.1875em) {
+  /* line 77, ../../scss/modules/_grid.scss */
+  .grid__item--4-12 {
+    width: 47.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--4-12:nth-child(2n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--4-12:nth-child(2n + 2) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 56.25em) {
+  /* line 77, ../../scss/modules/_grid.scss */
+  .grid__item--4-12 {
+    width: 30.55556%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    width: 30.55556%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--4-12:nth-child(3n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--4-12:nth-child(3n + 2) {
+    margin-left: 34.72222%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--4-12:nth-child(3n + 3) {
+    margin-left: 68.05556%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  3 columns wide in 12 column wide container (4 cols per row)
+ */
+@media (min-width: 37.5em) and (max-width: 56.1875em) {
+  /* line 93, ../../scss/modules/_grid.scss */
+  .grid__item--3-12 {
+    width: 47.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(2n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(2n + 2) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 56.25em) {
+  /* line 93, ../../scss/modules/_grid.scss */
+  .grid__item--3-12 {
+    width: 22.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    width: 22.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(4n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(4n + 2) {
+    margin-left: 26.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(4n + 3) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-12:nth-child(4n + 4) {
+    margin-left: 76.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  A grid container 9 cols wide needs to have its margins adjusted
+ */
+@media (min-width: 56.25em) {
+  /* line 110, ../../scss/modules/_grid.scss */
+  .grid--9 {
+    margin-right: -1.85185%;
+    margin-left: -1.85185%;
+  }
+}
+
+@media (min-width: 37.5em) and (max-width: 56.1875em) {
+  /* line 120, ../../scss/modules/_grid.scss */
+  .grid__item--3-9 {
+    width: 47.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(2n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(2n + 2) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 56.25em) and (max-width: 64em) {
+  /* line 120, ../../scss/modules/_grid.scss */
+  .grid__item--3-9 {
+    width: 30.55556%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 2) {
+    margin-left: 34.72222%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 3) {
+    margin-left: 68.05556%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 64em) {
+  /* line 120, ../../scss/modules/_grid.scss */
+  .grid__item--3-9 {
+    width: 29.62963%;
+    float: left;
+    margin-left: 1.85185%;
+    margin-right: 1.85185%;
+    width: 29.62963%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 1) {
+    margin-left: 1.85185%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 2) {
+    margin-left: 35.18519%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-9:nth-child(3n + 3) {
+    margin-left: 68.51852%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  A grid container 6 cols wide needs to have its margins adjusted
+ */
+@media (min-width: 56.25em) {
+  /* line 142, ../../scss/modules/_grid.scss */
+  .grid--6 {
+    margin-right: -2.77778%;
+    margin-left: -2.77778%;
+  }
+}
+
+/*
+ *  2 columns wide in 6 column wide container (3 cols per row)
+ */
+/* line 155, ../../scss/modules/_grid.scss */
+.grid__item--2-6 {
+  width: 48.33333%;
+  float: left;
+}
+/* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+.grid__item--2-6:nth-child(2n + 1) {
+  margin-left: 0.83333%;
+  margin-right: -100%;
+  clear: both;
+}
+/* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+.grid__item--2-6:nth-child(2n + 2) {
+  margin-left: 50.83333%;
+  margin-right: -100%;
+  clear: none;
+}
+@media (min-width: 28.125em) and (max-width: 37.5em) {
+  /* line 155, ../../scss/modules/_grid.scss */
+  .grid__item--2-6 {
+    width: 30.55556%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 2) {
+    margin-left: 34.72222%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 3) {
+    margin-left: 68.05556%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 37.5em) and (max-width: 64em) {
+  /* line 155, ../../scss/modules/_grid.scss */
+  .grid__item--2-6 {
+    width: 22.22222%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(4n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(4n + 2) {
+    margin-left: 26.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(4n + 3) {
+    margin-left: 51.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(4n + 4) {
+    margin-left: 76.38889%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 64em) {
+  /* line 155, ../../scss/modules/_grid.scss */
+  .grid__item--2-6 {
+    width: 27.77778%;
+    float: left;
+    margin-left: 2.77778%;
+    margin-right: 2.77778%;
+    width: 27.77778%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 1) {
+    margin-left: 2.77778%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 2) {
+    margin-left: 36.11111%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--2-6:nth-child(3n + 3) {
+    margin-left: 69.44444%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  3 columns wide in 6 column wide container (2 cols per row)
+ */
+@media (min-width: 37.5em) and (max-width: 64em) {
+  /* line 180, ../../scss/modules/_grid.scss */
+  .grid__item--3-6 {
+    width: 30.55556%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-6:nth-child(3n + 1) {
+    margin-left: 1.38889%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-6:nth-child(3n + 2) {
+    margin-left: 34.72222%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-6:nth-child(3n + 3) {
+    margin-left: 68.05556%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 64em) {
+  /* line 180, ../../scss/modules/_grid.scss */
+  .grid__item--3-6 {
+    width: 44.44444%;
+    float: left;
+    margin-left: 2.77778%;
+    margin-right: 2.77778%;
+    width: 44.44444%;
+    float: left;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-6:nth-child(2n + 1) {
+    margin-left: 2.77778%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 63, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.1/sass/susy/language/susy/_gallery.scss */
+  .grid__item--3-6:nth-child(2n + 2) {
+    margin-left: 52.77778%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+/*
+ *  Placed last so that they overwrite other properties
+ */
+/* line 201, ../../scss/modules/_grid.scss */
+.grid__item--first {
+  *clear: left;
+}
+
+/* line 205, ../../scss/modules/_grid.scss */
+.grid__item--last {
+  *float: right;
+  *margin-left: 0;
+}
+
+/*  #Hide
+
+    <div class="hide--to-l">Skjul dersom mindre bredde enn $breakpoint-large</div>
+    <div class="hide--from-l">Skjul dersom større bredde enn $breakpoint-large</div>
+*/
+@media (min-width: 64em) {
+  /* line 8, ../../scss/components/_m.scss */
+  .hide--from-l {
+    display: none;
+  }
+}
+@media (max-width: 64em) {
+  /* line 8, ../../scss/components/_m.scss */
+  .hide--to-l {
+    display: none;
+  }
+}
+
+/*  Highlight
+    Framhever siden med farget bakgrunn.
+    Kombiner med «constrained»-modulen for å la bakgrunnen løpe i full bredde
+
+    Definer highlights i settings/color $highlight-colors
+
+    <div class="highlight">
+      <div class="constrained">Innhold</div>
+    </div>
+
+    <div class="highlight--dark">
+      <div class="constrained">Innhold</div>
+    </div>
+*/
+/* line 136, ../../scss/modules/_highlight.scss */
+.highlight {
+  background: #ebebe9;
+}
+/* line 142, ../../scss/modules/_highlight.scss */
+.highlight--dark {
+  background: #1e4774;
+  color: #f2f2f1;
+}
+/* line 53, ../../scss/modules/_highlight.scss */
+.highlight--dark a {
+  border-color: #557599;
+  color: #f2f2f1;
+}
+/* line 65, ../../scss/modules/_highlight.scss */
+.highlight--dark a:hover, .highlight--dark a:focus {
+  border-color: #f2f2f1;
+}
+/* line 80, ../../scss/modules/_highlight.scss */
+.highlight--dark .nav, .highlight--dark .nav__item, .highlight--dark .side-menu, .highlight--dark .side-menu__item {
+  border-color: #557599;
+}
+/* line 98, ../../scss/modules/_highlight.scss */
+.highlight--dark .tabs, .highlight--dark .tabs__bar, .highlight--dark .tabs__bar__item__link {
+  border-color: #3f79b9;
+}
+/* line 115, ../../scss/modules/_highlight.scss */
+.highlight--dark .sidenote {
+  color: #c1c1bc;
+}
+/* line 119, ../../scss/modules/_highlight.scss */
+.highlight--dark .tabs__bar__item__link--active {
+  background-color: #f2f2f1;
+  color: #333333;
+}
+/* line 152, ../../scss/modules/_highlight.scss */
+.highlight--pattern {
+  /*
+   * 1. Double background hack to make old browser load the png (http://css-tricks.com/using-svg/)
+   *    Known issue with Android 2-versions which support multiple background but not svg-content.
+   */
+  background-image: url("../img/header/background.png");
+  /* 1 */
+  background-image: url("../img/header/background.svg"), none;
+  /* 1 */
+}
+
+/*  # Image link
+
+    Brukes til lenker som ligger rundt bilder
+
+    <a class="imglink">
+      <img src="http://lorempixel.com/output/technics-q-c-640-480-4.jpg" />
+    </a>
+*/
+/* line 10, ../../scss/modules/_imglink.scss */
+.imglink {
+  display: block;
+  border-bottom: 0;
+}
+/* line 14, ../../scss/modules/_imglink.scss */
+.imglink img {
+  display: block;
+}
+
+/*  #Item
+
+    Brukes som regel sammen med grid for å gi vertikalt mellomrom mellom innholdet
+    
+    Horizontal-varianten brukes når bilde/ikon skal stå til siden for innholdet
+
+    Vertical-varianten brukes når bilde/ikon skal stå over innholdet, men falle til siden på små enheter
+
+    <div class="item">
+      <h2 class="item__header">Heading</h2>
+      <span class="sidenote">Published 1st Jan 2014</span>
+      <p class="item__intro">
+        This is the intro text
+      </p>
+    </div>
+
+    <div class="item item--horizontal">
+      <h2 class="item__header">Heading</h2>
+      <span class="sidenote">Published 1st Jan 2014</span>
+      <p class="item__intro">
+        This is the intro text
+      </p>
+    </div>
+
+    <div class="item item--vertical">
+      <h2 class="item__header">Heading</h2>
+      <span class="sidenote">Published 1st Jan 2014</span>
+      <p class="item__intro">
+        This is the intro text
+      </p>
+    </div>
+*/
+/* line 38, ../../scss/modules/_item.scss */
+.item__intro {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin-top: 0.57143em;
+}
+
+/* line 43, ../../scss/modules/_item.scss */
+.item {
+  position: relative;
+  padding: 1em 0;
+  overflow: hidden;
+}
+
+/* line 49, ../../scss/modules/_item.scss */
+.item__content {
+  overflow: hidden;
+}
+
+/* line 53, ../../scss/modules/_item.scss */
+.item__icon {
+  width: 48px;
+  height: 48px;
+  background-position: 50% 50%;
+  margin-top: 0.57143em;
+}
+
+/* line 61, ../../scss/modules/_item.scss */
+.item__header {
+  border-bottom: 0;
+  margin-bottom: 0em;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+@media (min-width: 25em) and (max-width: 37.5em) {
+  /* line 68, ../../scss/modules/_item.scss */
+  .item--vertical .item__header {
+    margin-top: 0;
+  }
+}
+/* line 74, ../../scss/modules/_item.scss */
+.item--horizontal .item__header {
+  margin-top: 0;
+}
+
+/* line 79, ../../scss/modules/_item.scss */
+.item__intro {
+  margin-bottom: 0.57143em;
+  margin-bottom: 1.14286em;
+}
+
+@media (min-width: 25em) and (max-width: 37.5em) {
+  /* line 87, ../../scss/modules/_item.scss */
+  .item--vertical .item__imglink {
+    float: left;
+    margin-right: 20px;
+    max-width: 50%;
+  }
+}
+
+/*  #Main
+
+    Brukes til å plassere innholdet i to eller tre kolonner:
+    - (meny) + (hovedinnhold) + (tilleggsinnhold)
+    - (meny) + (hovedinnhold)
+
+    <div class="main">
+      <main class="main__center" role="main">Hovedinnhold 6 kolonner</main>
+      <aside class="main__right" role="complementary">Sideinnhold 3 kolonner</aside>
+      <nav class="main__left" role="navigation">Meny 3 kolonner</nav>
+    </div>
+
+    <div class="main">
+      <main class="main__center-right" role="main">Hovedinnhold 9 kolonner</main>
+      <nav class="main__left" role="navigation">Meny 3 kolonner</nav>
+    </div>
+*/
+/*
+  Font size for right column
+*/
+@media (min-width: 64em) {
+  /* line 24, ../../scss/modules/_main.scss */
+  .main {
+    margin: 0 -1.38889%;
+  }
+}
+
+@media (min-width: 64em) {
+  /* line 32, ../../scss/modules/_main.scss */
+  .main__center {
+    width: 47.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    margin-left: 26.38889%;
+  }
+}
+
+@media (min-width: 64em) {
+  /* line 41, ../../scss/modules/_main.scss */
+  .main__center-right {
+    width: 72.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    margin-left: 26.38889%;
+  }
+}
+
+/* line 50, ../../scss/modules/_main.scss */
+.main__right {
+  font-size: 0.75em;
+  line-height: 1.33333em;
+}
+/* line 54, ../../scss/modules/_main.scss */
+.main__right h2, .main__right .top-image--large .top-image__header, .top-image--large .main__right .top-image__header {
+  font-size: 2em;
+  line-height: 1.33333em;
+}
+/* line 59, ../../scss/modules/_main.scss */
+.main__right h3 {
+  font-size: 1.56em;
+  line-height: 1.28205em;
+}
+/* line 64, ../../scss/modules/_main.scss */
+.main__right h4 {
+  font-size: 1.33333em;
+  line-height: 1.5em;
+}
+/* line 69, ../../scss/modules/_main.scss */
+.main__right p, .main__right ul, .main__right ol, .main__right pre {
+  margin-top: 0.66667em;
+  margin-bottom: 0.66667em;
+}
+/* line 74, ../../scss/modules/_main.scss */
+.main__right .calendar-list__item {
+  margin-top: 1.33333em;
+  margin-bottom: 1.33333em;
+}
+/* line 79, ../../scss/modules/_main.scss */
+.main__right .calendar,
+.main__right .calendar-list__sheet {
+  font-size: 1.33333em;
+  line-height: 1.5em;
+}
+@media (min-width: 64em) {
+  /* line 50, ../../scss/modules/_main.scss */
+  .main__right {
+    width: 22.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+    *float: right;
+    *margin-left: 0;
+  }
+}
+
+@media (min-width: 64em) {
+  /* line 96, ../../scss/modules/_main.scss */
+  .main__left {
+    position: relative;
+    float: left;
+    margin-right: 1.38889%;
+    width: 22.22222%;
+    margin-left: -98.61111%;
+    *margin-left: -74%;
+  }
+}
+/* line 111, ../../scss/modules/_main.scss */
+.main__left .side-menu {
+  margin-top: 0;
+  border-top: 0;
+}
+
+/*  #Media
+
+    Media-objektet http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+    Kjent fra Nicole Sullivan (@stubbornella)
+
+    Brukes til å plassere et element med fast størrelse (som f.eks. et bilde/ikon) ved siden av et element med flytende innhold (tekst)
+
+    Det faste innholdet `img` må alltid ligge over det flytende siden vi bruker floats.
+    Kan bruke `@include media([array med variasjoner[, mellomrom mellom innhold]])` direkte i andre moduler.
+
+    <div class="media">
+      <div class="media__img" style="width: 32px; height: 32px; background: green;"></div>
+      <div class="media__bd">Dette er litt tekstinnhold</div>
+    </div>
+
+    <div class="media">
+      <div class="media__img--right" style="width: 32px; height: 32px; background: red;"></div>
+      <div class="media__bd">Dette er litt tekstinnhold</div>
+    </div>
+
+    <div class="media">
+      <div class="media__img" style="width: 32px; height: 32px; background: green;"></div>
+      <div class="media__img--right" style="width: 32px; height: 32px; background: red;"></div>
+      <div class="media__bd">Dette er litt tekstinnhold</div>
+    </div>
+*/
+/* line 30, ../../scss/components/_media.scss */
+.media, .media__bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+/* line 38, ../../scss/components/_media.scss */
+.media__img--right {
+  float: right;
+  margin-left: 1em;
+}
+/* line 21, ../../scss/components/_media.scss */
+.media__img--right img {
+  display: block;
+}
+
+/* line 43, ../../scss/components/_media.scss */
+.media__img {
+  float: left;
+  margin-right: 1em;
+}
+/* line 21, ../../scss/components/_media.scss */
+.media__img img {
+  display: block;
+}
+
+/*  #Top horizonal menu
+    Mobilmeny: http://tympanus.net/Development/MultiLevelPushMenu/
+
+    <nav class="menu" role="navigation">
+      <ul class="menu__content menu__level">
+        <li class="menu__item">
+          <div class="menu__item-content-wrapper">
+            <a class="menu__item-link menu__item-link--active" href="#">Menu item 1</a>
+          </div>
+        </li>
+        <li class="menu__item">
+          <div class="menu__item-content-wrapper">
+            <a class="menu__item-link" href="#">Menu item 2</a>
+          </div>
+        </li>
+        <li class="menu__item">
+          <div class="menu__item-content-wrapper">
+            <div class="menu__item-content menu__item--submenu">
+              <a class="menu__item-link menu__item-link--submenu" href="#">Menu item 3</a>
+              <i class="icon--menu-arrow-down menu__item__dropdown hide--to-l"></i>
+              <i class="icon--menu-arrow-right menu__item__dropdown hide--from-l js-menu-dropdown"></i>
+            </div>
+            <ul class="menu__submenu menu__level">
+              <li class="menu__submenu-item">
+                <a class="menu__item-link" href="#">Submenu item 1</a>
+              </li>
+              <li class="menu__submenu-item">
+                <a class="menu__item-link" href="#">Submenu item 2</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+*/
+/* line 47, ../../scss/modules/_menu.scss */
+.menu {
+  /*
+   * =================================================
+   *  MOBILE MENU
+   * =================================================
+   */
+  /*
+   * =================================================
+   *  DESKTOP MENU
+   * =================================================
+   */
+}
+/* line 51, ../../scss/modules/_menu.scss */
+.menu-trigger, .menu__back-level {
+  display: none;
+}
+/* line 56, ../../scss/modules/_menu.scss */
+.menu a {
+  border-bottom: 0;
+  zoom: 1;
+}
+/* line 62, ../../scss/modules/_menu.scss */
+.menu__content {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* line 68, ../../scss/modules/_menu.scss */
+.menu__submenu {
+  margin: 0;
+  padding-left: 1em;
+  list-style: none;
+}
+@media (max-width: 64em) {
+  /* line 47, ../../scss/modules/_menu.scss */
+  .menu {
+    position: absolute;
+    /* we can't use fixed here :( */
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 1;
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  /* line 95, ../../scss/modules/_menu.scss */
+  .menu,
+  .menu a, .page-header .menu a {
+    color: #f2f2f1;
+    text-decoration: none;
+  }
+  /* line 103, ../../scss/modules/_menu.scss */
+  .no-csstransforms3d .menu, .no-js .menu {
+    display: none;
+  }
+  /* line 110, ../../scss/modules/_menu.scss */
+  .menu-container, .menu-scroller {
+    height: 100%;
+  }
+
+  /* line 115, ../../scss/modules/_menu.scss */
+  .menu-trigger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -1.75em;
+    width: 3.375em;
+    height: 3.375em;
+    border: 1px solid #bec8d3;
+    background-color: #d5dfea;
+    background-color: rgba(193, 212, 234, 0.3);
+    background-position: 50% 50%;
+    text-indent: -999em;
+    -moz-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  /* line 131, ../../scss/modules/_menu.scss */
+  .menu-trigger:hover, .menu-trigger:focus, .menu-trigger:active {
+    border: 1px solid rgba(30, 71, 116, 0.2);
+    background-color: #c9d5e1;
+  }
+
+  /* line 139, ../../scss/modules/_menu.scss */
+  .menu-scroller {
+    overflow-y: scroll;
+  }
+
+  /* line 143, ../../scss/modules/_menu.scss */
+  .menu-scroller, .menu-scroller-inner {
+    position: relative;
+  }
+
+  /* line 148, ../../scss/modules/_menu.scss */
+  .menu-container {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* line 153, ../../scss/modules/_menu.scss */
+  .menu-pusher {
+    position: relative;
+    left: 0;
+    height: 100%;
+  }
+  /* line 160, ../../scss/modules/_menu.scss */
+  .menu-pusher:after {
+    z-index: -1;
+  }
+
+  /* line 174, ../../scss/modules/_menu.scss */
+  .menu__level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e4774;
+    z-index: 1100;
+    -moz-transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  /* line 188, ../../scss/modules/_menu.scss */
+  .constrained > .menu__level, .constrained-content > .menu__level {
+    box-shadow: none;
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  /* line 199, ../../scss/modules/_menu.scss */
+  .menu__level:after {
+    z-index: -1;
+  }
+  /* line 207, ../../scss/modules/_menu.scss */
+  .menu__level--open {
+    box-shadow: none;
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  /* line 212, ../../scss/modules/_menu.scss */
+  .menu__level--open .menu__level--open {
+    -moz-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+    -moz-transform: translate3d(40px, 0, 0);
+    -webkit-transform: translate3d(40px, 0, 0);
+    transform: translate3d(40px, 0, 0);
+  }
+
+  /* line 219, ../../scss/modules/_menu.scss */
+  .menu__level--overlay {
+    overflow-x: visible;
+  }
+  /* line 222, ../../scss/modules/_menu.scss */
+  .menu__level--overlay:before {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    opacity: 1;
+  }
+  /* line 232, ../../scss/modules/_menu.scss */
+  .menu__level--overlay > li {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  /* line 235, ../../scss/modules/_menu.scss */
+  .menu__level--overlay > li > .menu__item-content-wrapper > .menu__item-content {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  /* line 242, ../../scss/modules/_menu.scss */
+  .menu__level--noscroll {
+    overflow-x: visible;
+  }
+
+  /* line 246, ../../scss/modules/_menu.scss */
+  .menu__level--scroll {
+    overflow-x: hidden;
+  }
+
+  /* line 257, ../../scss/modules/_menu.scss */
+  .menu__item-content {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+
+  /* line 265, ../../scss/modules/_menu.scss */
+  .menu__item-link {
+    display: block;
+    padding: 0.8em 20px;
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+  /* line 273, ../../scss/modules/_menu.scss */
+  .menu__item-link:hover, .menu__item-link:focus, .menu__item-link:active, .menu__item-link--active {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -1px transparent;
+  }
+
+  /* line 284, ../../scss/modules/_menu.scss */
+  .menu__item-content:hover .menu__item-link {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -1px transparent;
+  }
+
+  /* line 289, ../../scss/modules/_menu.scss */
+  .menu__item__dropdown {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background-position: 50% 50%;
+    cursor: e-resize;
+    -moz-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  /* line 306, ../../scss/modules/_menu.scss */
+  .menu__back-level {
+    display: block;
+    padding: 0.66667em 20px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.1);
+    cursor: w-resize;
+    font-size: 0.75em;
+    line-height: 1.33333em;
+  }
+
+  /* line 316, ../../scss/modules/_menu.scss */
+  .menu__submenu {
+    padding-left: 0;
+  }
+
+  /* line 320, ../../scss/modules/_menu.scss */
+  .menu-pusher, .menu__level {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  /* line 326, ../../scss/modules/_menu.scss */
+  .menu-pusher:after, .menu__level:after, .menu__level:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    content: '';
+    opacity: 0;
+    z-index: 1000;
+  }
+
+  /* line 337, ../../scss/modules/_menu.scss */
+  .menu-pusher:after, .menu__level:after {
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+    -moz-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+    transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  }
+
+  /* line 344, ../../scss/modules/_menu.scss */
+  .menu-pushed:after, .menu__level--overlay:after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+}
+@media (min-width: 64em) {
+  /* line 47, ../../scss/modules/_menu.scss */
+  .menu {
+    border-color: #bec8d3;
+    background: #d5dfea;
+    background: rgba(193, 212, 234, 0.3);
+    margin-top: 0.5em;
+    border-bottom-width: 0.0625em;
+    border-bottom-style: solid;
+    padding-bottom: 0.4375em;
+  }
+  /* line 372, ../../scss/modules/_menu.scss */
+  .menu__content {
+    margin-right: -rhythm(4)/2;
+    margin-bottom: 0;
+    margin-left: -rhythm(4)/2;
+    padding: 0;
+    list-style: none;
+    margin-top: 0.5em;
+  }
+}
+@media only screen and (min-width: 64em) and (min-width: 64em) {
+  /* line 372, ../../scss/modules/_menu.scss */
+  .menu__content {
+    display: table;
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #bec8d3;
+    width: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  /* line 390, ../../scss/modules/_menu.scss */
+  .menu__item {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+}
+@media only screen and (min-width: 64em) and (min-width: 64em) {
+  /* line 390, ../../scss/modules/_menu.scss */
+  .menu__item {
+    display: table-cell;
+    border-right: 1px solid #bec8d3;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  /* line 417, ../../scss/modules/_menu.scss */
+  .menu__item:hover > .menu__item-content-wrapper > .menu__item--submenu .menu__item-link--submenu {
+    margin: -1px -1px -0.5em -1px;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #bec8d3;
+    padding-bottom: 1em;
+    background-color: #d5dfea;
+    color: #1e4774;
+  }
+  /* line 27, ../../scss/components/_e.scss */
+  .menu__item__dropdown {
+    position: absolute;
+    top: 1em;
+    right: 20px;
+    width: 15px;
+    height: 9px;
+  }
+  /* line 435, ../../scss/modules/_menu.scss */
+  .menu__item:hover .menu__item__dropdown {
+    margin-top: 1px;
+  }
+  /* line 443, ../../scss/modules/_menu.scss */
+  .menu__item-content-wrapper {
+    position: relative;
+  }
+
+  /* line 447, ../../scss/modules/_menu.scss */
+  .menu__item-link {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #1e4774;
+    -moz-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+  }
+  /* line 455, ../../scss/modules/_menu.scss */
+  .menu__item-link:hover, .menu__item-link:focus, .menu__item-link:active {
+    margin-left: -1px;
+    margin-right: -1px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background: #c9d5e1;
+  }
+  /* line 8, ../../scss/components/_m.scss */
+  .menu__item-link--submenu {
+    padding-right: 35px;
+  }
+  /* line 476, ../../scss/modules/_menu.scss */
+  .menu__item-link--active, .page-header .menu__item-link--active, .menu__item-link--active:hover, .menu__item-link--active:focus, .menu__item-link--active:active {
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 0;
+    background: #1e4774;
+    color: #f2f2f1;
+  }
+
+  /* line 498, ../../scss/modules/_menu.scss */
+  .menu__submenu {
+    position: absolute;
+    display: none;
+    margin-top: 0.5em;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #bec8d3;
+    list-style: none;
+    padding: 0;
+    min-width: 100%;
+    background: #d5dfea;
+    text-align: left;
+    _width: 100%;
+  }
+
+  /* line 515, ../../scss/modules/_menu.scss */
+  .menu__back-level {
+    display: none;
+  }
+
+  /* line 519, ../../scss/modules/_menu.scss */
+  .menu__item:hover .menu__submenu, .menu__item:focus .menu__submenu {
+    display: block;
+  }
+}
+
+/*  #Nav
+    
+    Sekundær navigasjon
+
+    <ul class="nav nav--small">
+      <li class="nav__item">
+        <a class="nav__item__link" href="#">Nav item 1</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__item__link" href="#">Nav item 2</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__item__link" href="#">Nav item 3</a>
+      </li>
+    </ul>
+*/
+/* line 20, ../../scss/modules/_nav.scss */
+.nav {
+  margin: 0;
+  border-left: 1px solid #bec8d3;
+  padding: 0;
+  list-style: none;
+}
+/* line 28, ../../scss/modules/_nav.scss */
+.nav a {
+  border-bottom: 0;
+}
+
+/* line 33, ../../scss/modules/_nav.scss */
+.nav--small {
+  font-size: 0.75em;
+  line-height: 1.33333em;
+}
+
+/* line 38, ../../scss/modules/_nav.scss */
+.nav__item {
+  float: left;
+  border-right: 1px solid #bec8d3;
+}
+
+/* line 43, ../../scss/modules/_nav.scss */
+.nav__item__link {
+  display: block;
+  padding: 0.5em 10px;
+}
+/* line 47, ../../scss/modules/_nav.scss */
+.nav--small .nav__item__link {
+  padding-top: 0.66667em;
+  padding-bottom: 0.66667em;
+}
+/* line 52, ../../scss/modules/_nav.scss */
+.nav--short .nav__item__link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/*  #Page footer nav
+    
+    Sentrert navihasjon i footeren
+
+    <nav class="page-footer-nav" role="navigation">
+      <ul class="page-footer-nav__list">
+        <li class="nav__item"><a class="nav__item__link" href="#">Footer link 1</a></li>
+        <li class="nav__item"><a class="nav__item__link" href="#">Footer link 2</a></li>
+        <li class="nav__item"><a class="nav__item__link" href="#">Footer link 3</a></li>
+      </ul>
+    </nav>
+*/
+/* line 17, ../../scss/modules/_page-footer-nav.scss */
+.page-footer-nav {
+  margin: 2em 0 -2em;
+  text-align: center;
+}
+
+/* line 22, ../../scss/modules/_page-footer-nav.scss */
+.page-footer-nav__list {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+/*  #Page footer
+    
+    Styling for innhold i footer
+
+    <div class="highlight--dark">
+      <div class="constrained-content clearfix">
+        <div class="page-footer clearfix" role="contentinfo">
+          <div class="page-footer__block-left">
+            <div class="page-footer__content">Footer innhold 1</div>
+            <div class="page-footer__content">Footer innhold 2</div>
+          </div>
+
+          <div class="page-footer__block-right">
+            <div class="page-footer__box">
+              <div class="page-footer__content">Footer innhold 3</div>
+              <div class="page-footer__content">Footer innhold 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/* line 26, ../../scss/modules/_page-footer.scss */
+.page-footer {
+  margin-right: -0.83333%;
+  margin-left: -0.83333%;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+@media (min-width: 64em) {
+  /* line 26, ../../scss/modules/_page-footer.scss */
+  .page-footer {
+    margin-right: -1.38889%;
+    margin-left: -1.38889%;
+  }
+}
+/* line 42, ../../scss/modules/_page-footer.scss */
+.page-footer h2, .page-footer .top-image--large .top-image__header, .top-image--large .page-footer .top-image__header,
+.page-footer h3 {
+  border-bottom: 0;
+}
+/* line 47, ../../scss/modules/_page-footer.scss */
+.page-footer h3 {
+  margin-bottom: 0;
+}
+/* line 51, ../../scss/modules/_page-footer.scss */
+.page-footer p {
+  margin-top: 0;
+}
+/* line 55, ../../scss/modules/_page-footer.scss */
+.page-footer ul {
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* line 61, ../../scss/modules/_page-footer.scss */
+.page-footer .side-menu {
+  margin-bottom: 2em;
+}
+/* line 64, ../../scss/modules/_page-footer.scss */
+.page-footer .side-menu a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 64em) {
+  /* line 71, ../../scss/modules/_page-footer.scss */
+  .page-footer__block-left, .page-footer__block-right {
+    width: 50%;
+    float: left;
+  }
+}
+
+/* line 84, ../../scss/modules/_page-footer.scss */
+.page-footer__block-right {
+  *float: right;
+  *width: 49%;
+}
+
+/* line 94, ../../scss/modules/_page-footer.scss */
+.page-footer__box {
+  margin-top: 1.91667em;
+  margin-right: -0.66667em;
+  margin-left: -0.66667em;
+  border: 1px solid #567596;
+  padding: 0.66667em 0.66667em 0.58333em;
+}
+@media (min-width: 37.5em) {
+  /* line 94, ../../scss/modules/_page-footer.scss */
+  .page-footer__box {
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 2.58333em;
+  }
+}
+@media (min-width: 64em) {
+  /* line 94, ../../scss/modules/_page-footer.scss */
+  .page-footer__box {
+    margin-top: -0.75em;
+    margin-right: 2.77778%;
+  }
+}
+
+@media (min-width: 37.5em) {
+  /* line 121, ../../scss/modules/_page-footer.scss */
+  .page-footer__content {
+    margin-bottom: -2em;
+    width: 47.22222%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+  }
+}
+@media (min-width: 64em) {
+  /* line 121, ../../scss/modules/_page-footer.scss */
+  .page-footer__content {
+    width: 44.44444%;
+    float: left;
+    margin-left: 2.77778%;
+    margin-right: 2.77778%;
+  }
+  /* line 143, ../../scss/modules/_page-footer.scss */
+  .page-footer__content--last {
+    *float: right;
+    *margin-left: 0;
+  }
+}
+
+/*  #Page header
+    
+    Styling for headerinnhold
+
+    <div class="page-header" role="banner">
+      <div class="page-header__content-wrapper">
+        <div class="constrained">
+          <div class="page-header__content">
+            <a href="/" class="page-header__logo"><img src="http://localhost:9000/img/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"></a>
+            <nav class="page-header__nav">...</nav>
+            <div class="page-header__search">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+*/
+/*
+ * 1. So that sub-menu is not placed behind absolutely positioned elements in body (might have to be increased depending on body content)
+ * 2. Double background hack to make old browser load the png (http://css-tricks.com/using-svg/)
+ *    Known issue with Android 2-versions which support multiple background but not svg-content.
+ */
+/* line 26, ../../scss/modules/_page-header.scss */
+.page-header {
+  background-color: #dfe5ec;
+  background-color: rgba(121, 163, 208, 0.15);
+  background-image: url("../img/header/background.png");
+  /* 2 */
+  background-image: url("../img/header/background.svg"), none;
+  /* 2 */
+  background-repeat: no-repeat;
+  z-index: 10;
+  /* 1 */
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+@media (min-width: 64em) {
+  /* line 26, ../../scss/modules/_page-header.scss */
+  .page-header {
+    position: relative;
+    /* 1 */
+  }
+}
+/* line 44, ../../scss/modules/_page-header.scss */
+.page-header a {
+  color: #1e4774;
+}
+/* line 48, ../../scss/modules/_page-header.scss */
+.page-header .nav a,
+.page-header .menu a,
+.page-header .page-header__logo {
+  border-bottom: 0;
+}
+
+/* line 55, ../../scss/modules/_page-header.scss */
+.page-header__content {
+  position: relative;
+}
+
+/* line 62, ../../scss/modules/_page-header.scss */
+.page-header__skip-to:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #dfe5ec;
+}
+
+@inlude with-layout(layout(12 0.25 right)) {
+  /* line 70, ../../scss/modules/_page-header.scss */
+  .page-header__logo {
+    width: 48.33333%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+  }
+}
+/* line 76, ../../scss/modules/_page-header.scss */
+.page-header__logo img {
+  display: block;
+}
+
+/* line 81, ../../scss/modules/_page-header.scss */
+.page-header__search {
+  display: none;
+}
+@media (min-width: 64em) {
+  /* line 81, ../../scss/modules/_page-header.scss */
+  .page-header__search {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 1.5em;
+    max-width: 255px;
+    text-align: right;
+    *width: 255px;
+  }
+  @inlude with-layout(layout(12 0.25 right)) {
+    /* line 81, ../../scss/modules/_page-header.scss */
+    .page-header__search {
+      width: 48.33333%;
+      float: right;
+      margin-left: 0.83333%;
+      margin-right: 0.83333%;
+    }
+  }
+}
+
+/* line 105, ../../scss/modules/_page-header.scss */
+.page-header__nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 64em) {
+  /* line 105, ../../scss/modules/_page-header.scss */
+  .page-header__nav {
+    display: block;
+    float: right;
+  }
+}
+
+/*  #Pagination
+    
+    Paginering for bla. søkeside
+
+    http://localhost:9000/search.html
+
+    På små skjermer vises en enkel counter (3/5) i stedet for en liste med lenker pga. plassmangel
+
+    <div class="pagination">
+      <a href="#" class="pagination__prev">Forrige</a>
+      <a href="#" class="pagination__next">Neste</a>
+      <ul class="pagination__list">
+        <li class="pagination__list__item"><a href="#" class="pagination__list__link">1</a>
+        </li>
+        <li class="pagination__list__item"><a href="#" class="pagination__list__link">2</a>
+        </li>
+        <li class="pagination__list__item"><a href="#" class="pagination__list__link pagination__list__link--active">3</a>
+        </li>
+        <li class="pagination__list__item"><a href="#" class="pagination__list__link">4</a>
+        </li>
+        <li class="pagination__list__item"><a href="#" class="pagination__list__link">5</a>
+        </li>
+      </ul>
+      <div class="pagination__list pagination__list--small"><span class="pagination__count">3/5</span></div>
+    </div>
+*/
+/* line 36, ../../scss/modules/_pagination.scss */
+.pagination__prev {
+  float: left;
+  padding-left: 1.5em;
+  background-position: 8% 50%;
+}
+
+/* line 44, ../../scss/modules/_pagination.scss */
+.pagination__next {
+  float: right;
+  padding-right: 1.5em;
+  background-position: 92% 50%;
+}
+
+/* line 52, ../../scss/modules/_pagination.scss */
+.pagination__list {
+  display: none;
+  text-align: center;
+}
+@media (min-width: 37.5em) {
+  /* line 52, ../../scss/modules/_pagination.scss */
+  .pagination__list {
+    display: block;
+  }
+}
+
+/* line 63, ../../scss/modules/_pagination.scss */
+.pagination__list--small {
+  display: block;
+}
+@media (min-width: 37.5em) {
+  /* line 63, ../../scss/modules/_pagination.scss */
+  .pagination__list--small {
+    display: none;
+  }
+}
+
+/* line 71, ../../scss/modules/_pagination.scss */
+.pagination__list__item {
+  display: inline-block;
+}
+
+/* line 83, ../../scss/modules/_pagination.scss */
+.pagination__count {
+  display: inline-block;
+  padding: 0.5em 0;
+}
+
+/*  #Quote
+
+    Et stort sitat
+
+    <blockquote class="quote">Stort sitat</blockquote>
+*/
+/* line 10, ../../scss/modules/_quote.scss */
+.quote {
+  display: block;
+  font-style: italic;
+  font-size: 1.75em;
+  line-height: 1.14286em;
+  margin-top: 0.57143em;
+  margin-bottom: 0.57143em;
+}
+
+/* line 3, ../../scss/modules/_search-form.scss */
+.search-form {
+  display: table;
+  width: 30%;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+/* line 11, ../../scss/modules/_search-form.scss */
+.search-form__input, .search-form__btn {
+  display: table-cell;
+}
+
+/* line 16, ../../scss/modules/_search-form.scss */
+.search-form__input {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 22, ../../scss/modules/_search-form.scss */
+.search-form__btn {
+  width: 1%;
+}
+
+/*  #Search result
+
+    Liste av søkeresultater med bilde til venstre (høyre på mobil)
+
+    <ul class="search-result">
+      <li class="search-result__item">
+        <a href="/Vaare-tjenester/Folkehelse/Tilbud-HEFRES/AktivSkole36" tabindex="-1" class="search-result__item__img">
+          <img src="//localhost:9000/img/content/news/Logo-Aktiv-skole-365-med-illustrasjonsfoto-3.jpg" alt="">
+        </a>
+        <div class="search-result__content">
+          <h2 class="search-result__item__header">
+            <a href="/Vaare-tjenester/Folkehelse/Tilbud-HEFRES/AktivSkole36">AktivSkole365</a>
+          </h2>
+          <div class="sidenote">13. juli 2012</div>
+          <div class="search-result__item__intro">Leder- og aktivitetsutdannelse for elever i barne- og ungdomskolen. Utdanner ressurselever.</div>
+        </div>
+      </li>
+    </ul>
+*/
+@media (min-width: 37.5em) {
+  /* line 21, ../../scss/modules/_search-result.scss */
+  .search-result {
+    margin: 0 -1.85185%;
+  }
+}
+
+/* line 31, ../../scss/modules/_search-result.scss */
+.search-result__item {
+  margin: 2em 0;
+}
+
+/* line 37, ../../scss/modules/_search-result.scss */
+.search-result__item__img {
+  display: block;
+  float: right;
+  margin-left: 0.83333%;
+  border-bottom: 0;
+  max-width: 33%;
+}
+@media (min-width: 37.5em) {
+  /* line 37, ../../scss/modules/_search-result.scss */
+  .search-result__item__img {
+    width: 13.88889%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+  }
+}
+@media (min-width: 64em) {
+  /* line 37, ../../scss/modules/_search-result.scss */
+  .search-result__item__img {
+    width: 18.51852%;
+    float: left;
+    margin-left: 1.85185%;
+    margin-right: 1.85185%;
+  }
+}
+/* line 57, ../../scss/modules/_search-result.scss */
+.search-result__item__img img {
+  display: block;
+}
+
+@media (min-width: 37.5em) {
+  /* line 62, ../../scss/modules/_search-result.scss */
+  .search-result__content {
+    width: 80.55556%;
+    float: right;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+  }
+}
+@media (min-width: 64em) {
+  /* line 62, ../../scss/modules/_search-result.scss */
+  .search-result__content {
+    width: 74.07407%;
+    float: right;
+    margin-left: 1.85185%;
+    margin-right: 1.85185%;
+  }
+}
+
+/* line 78, ../../scss/modules/_search-result.scss */
+.search-result__item__header {
+  margin-top: 0;
+  margin-bottom: 0.33333em;
+  border-bottom: 0;
+}
+
+/*  #Search
+
+    Søkeboks brukt i header.
+
+    <form class="search" role="search">
+      <label class="visuallyhidden" for="page-header__search__field">Søk</label>
+      <input id="page-header__search__field" class="search__field" type="search">
+      <button class="search__btn icon--search">Søk</button>
+    </form>
+*/
+/* line 18, ../../scss/modules/_search.scss */
+.search {
+  position: relative;
+  float: right;
+  border: 1px solid #bec8d3;
+  width: 100%;
+  background: #f2f2f1;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* line 27, ../../scss/modules/_search.scss */
+.search__field {
+  display: block;
+  border: 0;
+  padding: 0.4375em 32px 0.4375em 0.5em;
+  width: 100%;
+  height: 1.875em;
+  background: transparent;
+  line-height: 1em;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+/* line 38, ../../scss/modules/_search.scss */
+.search__field:focus {
+  background: white;
+  outline: 0;
+}
+
+/* line 44, ../../scss/modules/_search.scss */
+.search__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 100%;
+  border: 0;
+  background-color: transparent;
+  background-position: 50% 50%;
+  text-indent: -999em;
+  overflow: hidden;
+}
+
+/*  #See more
+
+    Button linkting to more related content
+
+    <a class="see-more">See more news</a>
+*/
+/* line 9, ../../scss/modules/_see-more.scss */
+.see-more {
+  float: right;
+  padding-right: 1.5em;
+  background-position: 94% 50%;
+  margin-top: 1em;
+}
+
+/*  #Side menu
+
+    Vertikal meny
+
+    <ul class="side-menu">
+      <li class="side-menu__item">
+        <a href="#">Artikkel (121)</a>
+      </li>
+      <li class="side-menu__item">
+        <a href="#">Mappe (18)</a>
+      </li>
+      <li class="side-menu__item">
+        <a href="#" class="side-menu__link--expanded side-menu__link--active">Denne siden</a>
+        <ul class="side-menu__submenu">
+          <li class="side-menu__submenu__item"><a href="#">Undermenypunkt 1</a></li>
+          <li class="side-menu__submenu__item"><a href="#">Undermenypunkt 2</a></li>
+        </ul>
+      </li>
+    </ul>
+*/
+/* line 25, ../../scss/modules/_side-menu.scss */
+.side-menu {
+  margin-bottom: 1.5em;
+  border-top: 1px solid #dde2e7;
+  padding: 0;
+  list-style: none;
+}
+/* line 31, ../../scss/modules/_side-menu.scss */
+.highlight--dark .side-menu {
+  border-top-color: #567596;
+}
+
+/* line 36, ../../scss/modules/_side-menu.scss */
+.side-menu__item {
+  position: relative;
+  border-bottom: 1px solid #dde2e7;
+  zoom: 1;
+}
+/* line 42, ../../scss/modules/_side-menu.scss */
+.side-menu__item a {
+  position: relative;
+  display: block;
+  border-bottom: 0;
+  padding: 0.5em 0;
+  /*
+   *  Arrow icon to the right of menu item
+   */
+}
+/* line 52, ../../scss/modules/_side-menu.scss */
+.highlight--dark .side-menu__item a:hover, .highlight--dark .side-menu__item a:focus {
+  background-color: #1c426c;
+}
+/* line 61, ../../scss/modules/_side-menu.scss */
+.side-menu__item a:after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+  width: 10px;
+  height: 16px;
+  background-position: 100% 50%;
+}
+
+/* line 73, ../../scss/modules/_side-menu.scss */
+.side-menu__link--active {
+  font-weight: bold;
+}
+
+/* line 79, ../../scss/modules/_side-menu.scss */
+.side-menu__link--expanded:after {
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 86, ../../scss/modules/_side-menu.scss */
+.side-menu__submenu {
+  margin-bottom: 0.57143em;
+  font-size: 0.875em;
+  line-height: 1.14286em;
+}
+/* line 91, ../../scss/modules/_side-menu.scss */
+.side-menu__submenu a {
+  padding: 0.57143em 0;
+}
+/* line 94, ../../scss/modules/_side-menu.scss */
+.side-menu__submenu a:after {
+  left: -1.14286em;
+}
+
+/*  Sidenote
+
+    Enkel klasse som legges på tilleggsinformasjon som ikke skal være så framtredende.
+
+    <span class="sidenote">Mindre viktig tekst</span> enn dette.
+*/
+/* line 12, ../../scss/modules/_sidenote.scss */
+.sidenote {
+  color: #666666;
+  font-size: 0.75em;
+  line-height: 1.33333em;
+}
+
+/* line 11, ../../scss/modules/_slider.scss */
+.slider__slides, .slider__control-nav, .slider__direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 17, ../../scss/modules/_slider.scss */
+.slider__prev, .slider__next {
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 24, ../../scss/modules/_slider.scss */
+.slider {
+  position: relative;
+  margin-right: -20px;
+  margin-left: -20px;
+  overflow: hidden;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+@media (min-width: 64em) {
+  /* line 24, ../../scss/modules/_slider.scss */
+  .slider {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+/* line 38, ../../scss/modules/_slider.scss */
+.slider .top-image {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* line 44, ../../scss/modules/_slider.scss */
+.slider__viewport {
+  max-height: 2000px;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* line 50, ../../scss/modules/_slider.scss */
+.slider__slides {
+  background-color: #dee7f0;
+}
+@media (min-width: 64em) {
+  /* line 50, ../../scss/modules/_slider.scss */
+  .slider__slides {
+    background-color: transparent;
+  }
+}
+
+/* line 61, ../../scss/modules/_slider.scss */
+.slider__slide {
+  /* Hide the slides before the JS is loaded. Avoids image jumping */
+  display: none;
+  -webkit-backface-visibility: hidden;
+  *zoom: 1;
+  /* No JavaScript Fallback */
+  /* If you are not using another script, such as Modernizr, make sure you
+   * include js that eliminates this class on page load */
+}
+/* line 70, ../../scss/modules/_slider.scss */
+.slider__slide a {
+  position: relative;
+  display: block;
+}
+/* line 75, ../../scss/modules/_slider.scss */
+.slider__slide img {
+  display: block;
+  width: 100%;
+}
+/* line 80, ../../scss/modules/_slider.scss */
+* html .slider__slide {
+  height: 1%;
+}
+/* line 87, ../../scss/modules/_slider.scss */
+.no-js .slider__slide:first-child {
+  display: block;
+}
+
+/*
+ * Slider control nav
+ */
+/* line 98, ../../scss/modules/_slider.scss */
+.slider__control-nav {
+  display: none;
+  margin-right: 5em;
+  margin-bottom: -2em;
+  margin-left: 5em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+@media (min-width: 37.5em) {
+  /* line 98, ../../scss/modules/_slider.scss */
+  .slider__control-nav {
+    display: block;
+  }
+}
+/* line 124, ../../scss/modules/_slider.scss */
+.slider__control-nav li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+/* line 127, ../../scss/modules/_slider.scss */
+.slider__control-nav li a {
+  display: block;
+  margin: 0 5px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* line 142, ../../scss/modules/_slider.scss */
+.slider__control-nav li .slider__active, .slider__control-nav li .slider__active:hover {
+  border-color: #1e4774;
+  background: #1e4774;
+  color: #f2f2f1;
+}
+
+/*
+ * Slider direction nav
+ */
+/* line 160, ../../scss/modules/_slider.scss */
+.slider__direction-nav {
+  margin: 0.5em 0 0;
+  text-align: right;
+  *height: 0;
+}
+/* line 170, ../../scss/modules/_slider.scss */
+.slider__direction-nav li {
+  width: 5em;
+  text-align: left;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+/* line 176, ../../scss/modules/_slider.scss */
+.slider__direction-nav li:first-child {
+  float: left;
+  text-align: right;
+}
+
+/* line 184, ../../scss/modules/_slider.scss */
+.slider__prev {
+  display: block;
+  background-position: 0 50%;
+  text-align: right;
+}
+
+/* line 192, ../../scss/modules/_slider.scss */
+.slider__next {
+  display: block;
+  background-position: 100% 50%;
+}
+
+/*  Block used to position social links to the right of some other content
+
+    <div class="social-block">
+      <ul class="social-block__social-links social-links">
+        <li><a href="fazebookz.com" href="social-links__link"><i class="social-links__link__icon icon--facebook" title="Facebook"></i><span class="visuallyhidden">Facebbook</span></li>
+        <li><a href="twitturz.com" href="social-links__link"><i class="social-links__link__icon icon--twitter" title="Twitter"></i><span class="visuallyhidden">Twitter</span></li>
+        <li><a href="g00glz.com" href="social-links__link"><i class="social-links__link__icon icon--google" title="Google+"></i><span class="visuallyhidden">Google+</span></li>
+        <li><a href="rss.telemark.no" href="social-links__link"><i class="social-links__link__icon icon--rss" title="RSS-feed"></i><span class="visuallyhidden">RSS-feed</span></li>
+        <li><a href="mailto:post@telemark.no" href="social-links__link"><i class="social-links__link__icon icon--mail" title="Send e-post"></i><span class="visuallyhidden">Send e-post</span></li>
+      </ul>
+      <div class="social-block__other">
+        Put your contents here, your contents here! Bring out your contents.
+      </div>
+    </div>
+*/
+/* line 17, ../../scss/modules/_social-block.scss */
+.social-block {
+  text-align: center;
+}
+@media (min-width: 37.5em) {
+  /* line 17, ../../scss/modules/_social-block.scss */
+  .social-block {
+    text-align: left;
+  }
+  /* line 27, ../../scss/modules/_social-block.scss */
+  .social-block, .social-block__other {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+  }
+}
+
+@media (min-width: 37.5em) {
+  /* line 34, ../../scss/modules/_social-block.scss */
+  .social-block__social-links {
+    float: right;
+    margin-left: 2em;
+  }
+  /* line 21, ../../scss/components/_media.scss */
+  .social-block__social-links img {
+    display: block;
+  }
+}
+
+/*  # Social links
+
+    Liste med ikoner som lenker til sosiale-medier/del på sosiale medier-funksjoner.
+
+    Store ikoner:
+    <ul class="social-links">
+      <li><a href="https://www.facebook.com/telemarkfylke" class="social-links__link"><i title="Facebook" class="social-links__link__icon icon--facebook"></i><span class="visuallyhidden">Facebook</span></a></li>
+      <li><a href="https://twitter.com/telemarkfylke" class="social-links__link"><i title="Twitter" class="social-links__link__icon icon--twitter"></i><span class="visuallyhidden">Twitter</span></a></li>
+      <li><a href="https://plus.google.com/108353607427028279455/" class="social-links__link"><i title="Google+" class="social-links__link__icon icon--google"></i><span class="visuallyhidden">Google+</span></a></li>
+      <li><a href="http://www.telemark.no/rss" class="social-links__link"><i title="RSS-feed" class="social-links__link__icon icon--rss"></i><span class="visuallyhidden">RSS-feed</span></a></li>
+      <li><a href="mailto:post@t-fk.no" class="social-links__link"><i title="Send oss en e-post" class="social-links__link__icon icon--mailto"></i><span class="visuallyhidden">Send oss en e-post</span></a></li>
+    </ul>
+
+    Små ikoner:
+    <ul class="social-links social-links--small">
+      <li><a href="https://www.facebook.com/telemarkfylke" class="social-links__link social-links__link--small"><i title="Facebook" class="social-links__link__icon social-links__link__icon--small icon--facebook-16"></i><span class="visuallyhidden">Facebook</span></a></li>
+      <li><a href="https://twitter.com/telemarkfylke" class="social-links__link social-links__link--small"><i title="Twitter" class="social-links__link__icon social-links__link__icon--small icon--twitter-16"></i><span class="visuallyhidden">Twitter</span></a></li>
+      <li><a href="https://plus.google.com/108353607427028279455/" class="social-links__link social-links__link--small"><i title="Google+" class="social-links__link__icon social-links__link__icon--small icon--google-16"></i><span class="visuallyhidden">Google+</span></a></li>
+      <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.telemark.no%2FVaare-tjenester%2FArealbruk-og-transport%23.U1fBfzuMMK0.linkedin&amp;title=Arealbruk+og+transport+%2F+V%C3%A5re+tjenester+%2F+Start+-+Telemark+fylkeskommune&amp;ro=false&amp;summary=&amp;source=" class="social-links__link social-links__link--small"><i title="LinkedIn" class="social-links__link__icon social-links__link__icon--small icon--linkedin-16"></i><span class="visuallyhidden">LinkedIn</span></a></li>
+      <li><a href="mailto:post@t-fk.no" class="social-links__link social-links__link--small"><i title="Send oss en e-post" class="social-links__link__icon social-links__link__icon--small icon--mailto-16"></i><span class="visuallyhidden">Send oss en e-post</span></a></li>
+    </ul>
+*/
+/* line 24, ../../scss/modules/_social-links.scss */
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /*
+   * 1. To align icons with text baseline
+   */
+}
+/* line 35, ../../scss/modules/_social-links.scss */
+.social-links li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  /* 1 */
+}
+/* line 38, ../../scss/modules/_social-links.scss */
+.social-links li a {
+  display: block;
+}
+
+/* line 44, ../../scss/modules/_social-links.scss */
+.social-links--small {
+  margin-top: 0.5em;
+}
+
+/* line 49, ../../scss/modules/_social-links.scss */
+.social-links__link {
+  cursor: pointer;
+}
+/* line 52, ../../scss/modules/_social-links.scss */
+.social-links__link, .social-links__link:hover, .social-links__link:focus, .social-links__link:active {
+  border-bottom: 0;
+}
+
+/* line 60, ../../scss/modules/_social-links.scss */
+.social-links__link__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* line 66, ../../scss/modules/_social-links.scss */
+.social-links__link__icon--small {
+  width: 16px;
+  height: 16px;
+}
+
+/*  # Tabs
+
+    På mobil vises tabs som en vertikal accordion-meny, men på desktop blir den en tradisjonel tab-navigasjon.
+
+    Tabs-klassen brukes til styling, js-tabs brukes til å hooke opp javascript-funksjonaliteten.
+    <div class="tabs js-tabs">
+      <ul class="tabs__content">
+        <li class="tabs__content__item tabs__content__item--active">
+          <h1 class="tabs__content__header js-tabs-tab">Tab 1</h1>
+          <div class="tab__content__block">
+            <h2>Tab 1 header</h2>
+            <p>Tab 1 innhold</p>
+          </div>
+        </li>
+        <li class="tabs__content__item">
+          <h1 class="tabs__content__header js-tabs-tab">Tab 2</h1>
+          <div class="tab__content__block">
+            <h2>Tab 2 header</h2>
+            <p>Tab 2 innhold</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+*/
+/* line 29, ../../scss/modules/_tabs.scss */
+.tabs__bar, .tabs__content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 35, ../../scss/modules/_tabs.scss */
+.tabs {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+@media (min-width: 64em) {
+  /* line 35, ../../scss/modules/_tabs.scss */
+  .tabs {
+    border-left: 1px solid #bec8d3;
+  }
+}
+/* line 27, ../../scss/components/_e.scss */
+.tabs__bar {
+  display: none;
+}
+@media (min-width: 64em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__bar {
+    display: block;
+    border-bottom: 1px solid #bec8d3;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__bar__item {
+    display: block;
+    float: left;
+  }
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__bar__item__link {
+    position: relative;
+    display: block;
+    margin: 0 0 -1px -1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bec8d3 #bec8d3 #bec8d3 transparent;
+    padding: 0.4375em 20px;
+    z-index: 100;
+  }
+  /* line 8, ../../scss/components/_m.scss */
+  .tabs__bar__item__link--active {
+    background-color: #1e4774;
+    color: #f2f2f1;
+    z-index: 101;
+  }
+  /* line 92, ../../scss/modules/_tabs.scss */
+  .tabs__bar__item__link--active, .tabs__bar__item__link--active:hover, .tabs__bar__item__link--active:focus, .tabs__bar__item__link--active:active {
+    border-color: #1e4774;
+  }
+}
+@media (max-width: 64em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__content {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+/* line 27, ../../scss/components/_e.scss */
+.tabs__content__header {
+  margin: -1px -20px 0;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #bec8d3;
+  padding: 0.38889em 20px;
+  background-color: #dee7f0;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+@media (max-width: 64em) {
+  /* line 8, ../../scss/components/_m.scss */
+  .tabs__content__header--active {
+    background-color: #1e4774;
+    color: #f2f2f1;
+  }
+}
+@media (min-width: 64em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__content__header {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: -0.88889em;
+    padding-right: 0.88889em;
+    padding-left: 0.88889em;
+  }
+  /* line 144, ../../scss/modules/_tabs.scss */
+  .tabs--ready .tabs__content__header {
+    display: none;
+  }
+}
+/* line 8, ../../scss/components/_m.scss */
+.tabs__content__block--hidden {
+  display: none;
+}
+@media (max-width: 64em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__content__item {
+    margin: 0 20px;
+  }
+}
+@media (min-width: 64em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__content__item {
+    padding-left: 1em;
+  }
+}
+/* line 8, ../../scss/components/_m.scss */
+.tabs__content__item--active {
+  display: block;
+}
+@media (max-width: 37.5em) {
+  /* line 27, ../../scss/components/_e.scss */
+  .tabs__content__item__text {
+    border-bottom: 1px solid #bec8d3;
+  }
+}
+
+/*  # Top image
+
+    Brukes til å vise et bilde, med en bildetekst under
+
+    For mindre bilder (i brødtekst etc.) Liten tekst med tittel over beskrivelsen.
+    <figure class="top-image top-image--small">
+      <img src="//localhost:9000/img/content/news/AArets-laerebedrift-2013-HRL-6.jpg" class="top-image__img">
+      <figcaption class="top-image__text-wrapper">
+        <div class="top-image__text">
+          <div class="top-image__header">Årets lærebedrift</div><em class="top-image__body">Foto: Tom Riis</em>
+        </div>
+      </figcaption>
+    </figure>
+
+    For større bilder. Tittel plasseres til venstre for beskrivelsen.
+    <figure class="top-image top-image--large">
+      <img src="//localhost:9000/img/content/news/kulturminner-banner-12.jpg" class="top-image__img">
+      <figcaption class="top-image__text-wrapper">
+        <div class="top-image__text">
+          <h2 class="top-image__header">Kulturminner</h2>
+          <div class="top-image__body">Kulturminner skal være en ressurs for kunnskap, opplevelse og verdiskaping</div>
+        </div>
+      </figcaption>
+    </figure>
+
+*/
+/* line 39, ../../scss/modules/_top-image.scss */
+.top-image {
+  position: relative;
+  display: block;
+  margin-right: -20px;
+  margin-left: -20px;
+  border: 0;
+}
+@media (min-width: 64em) {
+  /* line 39, ../../scss/modules/_top-image.scss */
+  .top-image {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/* line 52, ../../scss/modules/_top-image.scss */
+.top-image--small {
+  font-size: 0.75em;
+  line-height: 1.33333em;
+}
+
+/* line 57, ../../scss/modules/_top-image.scss */
+.top-image__img {
+  display: block;
+}
+
+/* line 61, ../../scss/modules/_top-image.scss */
+.top-image__text-wrapper {
+  background: #dee7f0;
+  color: #333333;
+}
+@media (min-width: 64em) {
+  /* line 61, ../../scss/modules/_top-image.scss */
+  .top-image__text-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    background: #1b334e;
+    background: rgba(24, 46, 71, 0.9);
+    color: #f2f2f1;
+  }
+}
+/* line 76, ../../scss/modules/_top-image.scss */
+.top-image__text-wrapper a {
+  border-color: #3379c5;
+  color: #f2f2f1;
+}
+/* line 80, ../../scss/modules/_top-image.scss */
+.top-image__text-wrapper a:hover, .top-image__text-wrapper a:focus {
+  border-color: #f2f2f1;
+}
+
+/* line 88, ../../scss/modules/_top-image.scss */
+.top-image__text {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+}
+
+/* line 98, ../../scss/modules/_top-image.scss */
+.top-image--large .top-image__header {
+  margin-top: 0;
+  border-bottom: 0;
+}
+@media (min-width: 64em) {
+  /* line 98, ../../scss/modules/_top-image.scss */
+  .top-image--large .top-image__header {
+    width: 30.55556%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+  }
+}
+
+@media (min-width: 64em) {
+  /* line 112, ../../scss/modules/_top-image.scss */
+  .top-image--large .top-image__body {
+    width: 63.88889%;
+    float: left;
+    margin-left: 1.38889%;
+    margin-right: 1.38889%;
+  }
+  /* line 117, ../../scss/modules/_top-image.scss */
+  .top-image--large .top-image__body:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: -1em;
+    height: 100%;
+    width: 1px;
+    background: rgba(45, 72, 101, 0.9);
+    margin-left: 34.72222%;
+  }
+}
+
+/* line 135, ../../scss/modules/_top-image.scss */
+.top-image__expand-link {
+  display: none;
+}
+@media (min-width: 64em) {
+  /* line 135, ../../scss/modules/_top-image.scss */
+  .top-image__expand-link {
+    display: block;
+    float: right;
+    margin-top: -32px;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+  }
+  /* line 148, ../../scss/modules/_top-image.scss */
+  .top-image__expand-link:hover, .top-image__expand-link:focus {
+    opacity: 1;
+  }
+}
+
+/*  # Visually hidden focusable
+
+    Legges på elementer som skal være skjult, men synlig når de får fokus. Som f.eks. "hopp-til"-lenker.
+
+    <a href="#" class="visually-hidden-focusable">Hopp til hovedinnhold</a>
+
+*/
+/*  # Visually hidden
+
+    For tekst som skal være tilgjengelig for skjermlesere (screen readers), men ikke synlig for seende.
+
+    <label class="visuallyhidden" for="search">Søk</label>
+
+*/
