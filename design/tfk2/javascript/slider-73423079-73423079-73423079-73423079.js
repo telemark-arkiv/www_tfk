@@ -72,7 +72,7 @@
                     var b, c, e = "thumbnails" === d.vars.controlNav ? "control-thumbs" : "control-paging", g = 1;
                     if (d.controlNavScaffold = a('<ol class="' + f + "control-nav " + f + e + '"></ol>'), 
                     d.pagingCount > 1) for (var h = 0; h < d.pagingCount; h++) {
-                        if (c = d.slides.eq(h), b = "thumbnails" === d.vars.controlNav ? '<img src="' + c.attr("data-thumb") + '"/>' : "<a>" + g + "</a>", 
+                        if (c = d.slides.eq(h), b = "thumbnails" === d.vars.controlNav ? '<images src="' + c.attr("data-thumb") + '"/>' : "<a>" + g + "</a>",
                         "thumbnails" === d.vars.controlNav && !0 === d.vars.thumbCaptions) {
                             var k = c.attr("data-thumbcaption");
                             "" != k && void 0 != k && (b += '<span class="' + f + 'caption">' + k + "</span>");
@@ -80,7 +80,7 @@
                         d.controlNavScaffold.append("<li>" + b + "</li>"), g++;
                     }
                     d.controlsContainer ? a(d.controlsContainer).append(d.controlNavScaffold) : d.append(d.controlNavScaffold), 
-                    p.controlNav.set(), p.controlNav.active(), d.controlNavScaffold.delegate("a, img", i, function(b) {
+                    p.controlNav.set(), p.controlNav.active(), d.controlNavScaffold.delegate("a, images", i, function(b) {
                         if (b.preventDefault(), "" === j || j === b.type) {
                             var c = a(this), e = d.controlNav.index(c);
                             c.hasClass(f + "active") || (d.direction = e > d.currentSlide ? "next" : "prev", 

@@ -1,7 +1,7 @@
 <header role="banner" class="page-header">
     <div class="page-header__content-wrapper js-headroom">
             <div class="constrained">
-              <div class="page-header__content"><a href="#main" class="page-header__skip-to visuallyhidden-focusable">Hovedinnhold</a><a id="menu-trigger" href="#footer-menu" class="menu-trigger icon--menu-mobile">Meny</a><a href="/" class="page-header__logo"><img src="/extension/www_tfk/design/tfk2/img/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"/></a>
+              <div class="page-header__content"><a href="#main" class="page-header__skip-to visuallyhidden-focusable">Hovedinnhold</a><a id="menu-trigger" href="#footer-menu" class="menu-trigger icon--menu-mobile">Meny</a><a href="/" class="page-header__logo"><img src="/extension/www_tfk/design/tfk2/images/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"/></a>
                 <nav role="navigation" class="page-header__nav">
                             <ul class="nav nav--small">
                               <li class="nav__item"><a href="/" class="nav__item__link">Presse</a>

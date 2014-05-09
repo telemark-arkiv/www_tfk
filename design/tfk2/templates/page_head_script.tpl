@@ -37,5 +37,5 @@
     </script>
     <script src="/extension/www_tfk/design/tfk2/javascript/picturefill-efcdf1d1.js"></script>
     <noscript>
-      <link href="/extension/www_tfk/design/tfk2/img/icons/icons.fallback.css" rel="stylesheet">
+      <link href="/extension/www_tfk/design/tfk2/images/icons/icons.fallback.css" rel="stylesheet">
     </noscript>

@@ -50,7 +50,7 @@ function initButtons() {
                 
                 $imgs.each(function(i) {
                     var $img    = $(this);
-                    $('<img/>').load(function() {
+                    $('<images/>').load(function() {
                         ++cnt;
                         if( cnt === totalImgs ) {
                             $imgs.show();

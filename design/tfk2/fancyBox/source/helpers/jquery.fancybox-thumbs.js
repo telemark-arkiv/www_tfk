@@ -36,7 +36,7 @@
 				return el;
 			}
 
-			img = $(el).find('img');
+			img = $(el).find('images');
 
 			return img.length ? img.attr('src') : el.href;
 		},
@@ -60,7 +60,7 @@
 
 			//Load each thumbnail
 			$.each(F.group, function (i) {
-				$("<img />").load(function () {
+				$("<images />").load(function () {
 					var width = this.width,
 						height = this.height,
 						widthRatio, heightRatio, parent;

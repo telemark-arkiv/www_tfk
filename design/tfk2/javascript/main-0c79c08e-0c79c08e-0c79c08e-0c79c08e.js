@@ -486,7 +486,7 @@ window.grunticon = function(a) {
 };
 
 (function(a) {
-    var b = "//localhost:9000/img/icons/";
+    var b = "//localhost:9000/images/icons/";
     a([ b + "icons.data.svg.css", b + "icons.data.png.css", b + "icons.fallback.css" ]);
 })(grunticon);
 

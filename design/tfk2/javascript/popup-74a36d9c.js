@@ -510,7 +510,7 @@ MagnificPopup.prototype = {
                         if (e.is("img")) {
                             e.attr("src", c);
                         } else {
-                            e.replaceWith('<img src="' + c + '" class="' + e.attr("class") + '" />');
+                            e.replaceWith('<images src="' + c + '" class="' + e.attr("class") + '" />');
                         }
                     } else {
                         e.attr(d[1], c);
@@ -698,7 +698,7 @@ $.magnificPopup.registerModule("gallery", {
             _wrapClasses += " mfp-gallery";
             _mfpOn(OPEN_EVENT + b, function() {
                 if (a.navigateByImgClick) {
-                    mfp.wrap.on("click" + b, ".mfp-img", function() {
+                    mfp.wrap.on("click" + b, ".mfp-images", function() {
                         if (mfp.items.length > 1) {
                             mfp.next();
                             return false;
@@ -792,7 +792,7 @@ $.magnificPopup.registerModule("gallery", {
             }
             _mfpTrigger("LazyLoad", b);
             if (b.type === "image") {
-                b.img = $('<img class="mfp-img" />').on("load.mfploader", function() {
+                b.img = $('<images class="mfp-images" />').on("load.mfploader", function() {
                     b.hasSize = true;
                 }).on("error.mfploader", function() {
                     b.hasSize = true;
@@ -820,7 +820,7 @@ var _imgInterval, _getTitle = function(a) {
 
 $.magnificPopup.registerModule("image", {
     options: {
-        markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + "<figure>" + '<div class="mfp-img"></div>' + "<figcaption>" + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + "</div>" + "</figcaption>" + "</figure>" + "</div>",
+        markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + "<figure>" + '<div class="mfp-images"></div>' + "<figcaption>" + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + "</div>" + "</figcaption>" + "</figure>" + "</div>",
         cursor: "mfp-zoom-out-cur",
         titleSrc: "title",
         verticalFit: true,
@@ -929,10 +929,10 @@ $.magnificPopup.registerModule("image", {
                     a.loadError = true;
                 }
             }, f = mfp.st.image;
-            var g = b.find(".mfp-img");
+            var g = b.find(".mfp-images");
             if (g.length) {
                 var h = document.createElement("img");
-                h.className = "mfp-img";
+                h.className = "mfp-images";
                 a.img = $(h).on("load.mfploader", d).on("error.mfploader", e);
                 h.src = a.src;
                 if (g.is("img")) {
@@ -1179,7 +1179,7 @@ $.magnificPopup.registerModule("zoom", {
 
 (function(a) {
     "use strict";
-    var b = ".js-popup", c = b + "--img", d = b + "--gallery";
+    var b = ".js-popup", c = b + "--images", d = b + "--gallery";
     a.extend(true, a.magnificPopup.defaults, {
         tClose: "Lukk (Esc)",
         tLoading: "Laster...",

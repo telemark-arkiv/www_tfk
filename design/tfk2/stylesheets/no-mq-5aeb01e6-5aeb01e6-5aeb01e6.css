@@ -1661,9 +1661,9 @@ kbd {
    * 1. Double background hack to make old browser load the png (http://css-tricks.com/using-svg/)
    *    Known issue with Android 2-versions which support multiple background but not svg-content.
    */
-  background-image: url("../img/header/background.png");
+  background-image: url("../images/header/background.png");
   /* 1 */
-  background-image: url("../img/header/background.svg"), none;
+  background-image: url("../images/header/background.svg"), none;
   /* 1 */
 }
 
@@ -1672,7 +1672,7 @@ kbd {
     Brukes til lenker som ligger rundt bilder
 
     <a class="imglink">
-      <img src="http://lorempixel.com/output/technics-q-c-640-480-4.jpg" />
+      <images src="http://lorempixel.com/output/technics-q-c-640-480-4.jpg" />
     </a>
 */
 /* line 10, ../../scss/modules/_imglink.scss */
@@ -1865,7 +1865,7 @@ kbd {
 
     Brukes til å plassere et element med fast størrelse (som f.eks. et bilde/ikon) ved siden av et element med flytende innhold (tekst)
 
-    Det faste innholdet `img` må alltid ligge over det flytende siden vi bruker floats.
+    Det faste innholdet `images` må alltid ligge over det flytende siden vi bruker floats.
     Kan bruke `@include media([array med variasjoner[, mellomrom mellom innhold]])` direkte i andre moduler.
 
     <div class="media">
@@ -2306,7 +2306,7 @@ tr .page-footer__content {
       <div class="page-header__content-wrapper">
         <div class="constrained">
           <div class="page-header__content">
-            <a href="/" class="page-header__logo"><img src="http://localhost:9000/img/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"></a>
+            <a href="/" class="page-header__logo"><images src="http://localhost:9000/images/logo/logo.svg" alt="Telemark Fylkeskommune" title="Gå til forside"></a>
             <nav class="page-header__nav">...</nav>
             <div class="page-header__search">...</div>
           </div>
@@ -2323,9 +2323,9 @@ tr .page-footer__content {
 .page-header {
   background-color: #dfe5ec;
   background-color: rgba(121, 163, 208, 0.15);
-  background-image: url("../img/header/background.png");
+  background-image: url("../images/header/background.png");
   /* 2 */
-  background-image: url("../img/header/background.svg"), none;
+  background-image: url("../images/header/background.svg"), none;
   /* 2 */
   background-repeat: no-repeat;
   z-index: 10;
@@ -2515,7 +2515,7 @@ tr .page-footer__content {
     <ul class="search-result">
       <li class="search-result__item">
         <a href="/Vaare-tjenester/Folkehelse/Tilbud-HEFRES/AktivSkole36" tabindex="-1" class="search-result__item__img">
-          <img src="//localhost:9000/img/content/news/Logo-Aktiv-skole-365-med-illustrasjonsfoto-3.jpg" alt="">
+          <images src="//localhost:9000/images/content/news/Logo-Aktiv-skole-365-med-illustrasjonsfoto-3.jpg" alt="">
         </a>
         <div class="search-result__content">
           <h2 class="search-result__item__header">
@@ -3101,7 +3101,7 @@ tr .page-footer__content {
 
     For mindre bilder (i brødtekst etc.) Liten tekst med tittel over beskrivelsen.
     <figure class="top-image top-image--small">
-      <img src="//localhost:9000/img/content/news/AArets-laerebedrift-2013-HRL-6.jpg" class="top-image__img">
+      <images src="//localhost:9000/images/content/news/AArets-laerebedrift-2013-HRL-6.jpg" class="top-image__img">
       <figcaption class="top-image__text-wrapper">
         <div class="top-image__text">
           <div class="top-image__header">Årets lærebedrift</div><em class="top-image__body">Foto: Tom Riis</em>
@@ -3111,7 +3111,7 @@ tr .page-footer__content {
 
     For større bilder. Tittel plasseres til venstre for beskrivelsen.
     <figure class="top-image top-image--large">
-      <img src="//localhost:9000/img/content/news/kulturminner-banner-12.jpg" class="top-image__img">
+      <images src="//localhost:9000/images/content/news/kulturminner-banner-12.jpg" class="top-image__img">
       <figcaption class="top-image__text-wrapper">
         <div class="top-image__text">
           <h2 class="top-image__header">Kulturminner</h2>
