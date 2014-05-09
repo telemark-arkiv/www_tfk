@@ -1,5 +1,7 @@
 {* Load JavaScript dependencys + JavaScriptList *}
+{*
 {ezscript_load( array( ezini( 'JavaScriptSettings', 'JavaScriptList', 'design.ini' ), ezini( 'JavaScriptSettings', 'FrontendJavaScriptList', 'design.ini' ) ) )}
+*}
 {literal}
 <!--[if lt IE 9]>
         <script>
@@ -27,3 +29,13 @@
 
 </script>
 {/literal}
+
+ <script src="/extension/www_tfk/design/tfk2/javascript/vendor/modernizr-custom-0.4.1-bc302104.js"></script>
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="/extension/www_tfk/design/tfk2/javascript/picturefill-efcdf1d1.js"></script>
+    <noscript>
+      <link href="/extension/www_tfk/design/tfk2/img/icons/icons.fallback.css" rel="stylesheet">
+    </noscript>
