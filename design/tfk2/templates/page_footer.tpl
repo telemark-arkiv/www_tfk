@@ -90,13 +90,18 @@
             <div class="page-footer-nav">
               <ul class="page-footer-nav__list nav nav--small nav--short">
                 <li class="nav__item"><a href="https://docs.google.com/spreadsheet/viewform?formkey=dDFHcVlIQW43eHhjWUdXSlh2WVVlUEE6MQ" class="nav__item__link">Tilbakemeldinger</a></li>
-                <li class="nav__item"><a href="/" class="nav__item__link">Om nettstedet</a></li>
-                <li class="nav__item"><a href="/" class="nav__item__link">Kontakt webmaster</a></li>
-                <li class="nav__item"><a href="/" class="nav__item__link">Logg inn</a></li>
+                <li class="nav__item"><a href={'/Om-siden'|ezurl} class="nav__item__link">Om nettstedet</a></li>
+                <li class="nav__item"><a href="mailto:tom.marius.lorier.holen@t-fk.no" title="Send e-post til webmaster: tom.marius.lorier.holen@t-fk.no" class="nav__item__link">Kontakt webmaster</a></li>
+                {if $current_user.is_logged_in}
+                    <li class="nav__item"><a href={'/user/edit/'|ezurl} class="nav__item__link">Min profil</a></li>
+                	<li class="nav__item"><a href={'user/logout'|ezurl} class="nav__item__link">Logg ut</a></li>
+                {else}
+                    <li class="nav__item"><a href={'/siteadmin'|ezurl} class="nav__item__link">Logg inn</a></li>
+                {/if}
               </ul>
             </div>
-          </div>
-        </div>
+    </div>
+</div>
 
 {*
 
