@@ -24,78 +24,12 @@
               </div>
             </div>
           </div>
-            <nav id="menu" role="navigation" class="menu">
-              <div class="constrained">
-                <ul class="menu__content menu__level">
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000//" class="menu__item-link menu__item-link--active">Forside</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000/aktuelt/index.html" class="menu__item-link">Aktuelt</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000/politikk/index.html" class="menu__item-link">Politikk</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content menu__item--submenu"><a href="//localhost:9000/vaare-tjenester/index.html" class="menu__item-link menu__item-link--submenu">Våre Tjenester</a><i class="icon--menu-arrow-down menu__item__dropdown hide--to-l"></i><i class="icon--menu-arrow-right menu__item__dropdown hide--from-l js-menu-dropdown"></i>
-                      </div>
-                      <ul class="menu__submenu menu__level">
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/arealbruk-og-transport.html" class="menu__item-link">Arealbruk og transport</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/folkehelse/index.html" class="menu__item-link">Folkehelse</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/internasjonalt_arbeid.html" class="menu__item-link">Internasjonalt arbeid</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/kultur-og-idrett/index.html" class="menu__item-link">Kultur og idrett</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/kulturminner/index.html" class="menu__item-link">Kulturminner</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/kurs_og_konferanser.html" class="menu__item-link">Kurs og konferanser</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/miljo_og_friloftsliv.html" class="menu__item-link">Miljø og friluftsliv</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/naeringsliv.html" class="menu__item-link">Næringsliv</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/soeknader_og_tilskudd.html" class="menu__item-link">Søknader og tilskudd</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/tannhelse.html" class="menu__item-link">Tannhelse</a>
-                        </li>
-                        <li class="menu__submenu-item"><a href="//localhost:9000/vaare-tjenester/utdanning/index.html" class="menu__item-link">Utdanning</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000/planer.html" class="menu__item-link">Planer</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000/fylkeskommunen.html" class="menu__item-link">Fylkeskommunen</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu__item">
-                    <div class="menu__item-content-wrapper">
-                      <div class="menu__item-content"><a href="//localhost:9000/om_telemark.html" class="menu__item-link">Om Telemark</a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+          <!-- Hovedmeny -->
+          <!-- Top menu area: START -->
+          {if $pagedata.top_menu}
+            {include uri='design:menu/menu_top.tpl' nodebane=$dennenoden.path_array}
+          {/if}
+          <!--  Top menu area: END -->
 </header>
 
 {*
