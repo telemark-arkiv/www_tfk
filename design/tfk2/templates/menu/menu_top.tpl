@@ -38,9 +38,9 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 	    {set $i=inc( $i )}
 	    <li class="menu__item">
 	        <div class="menu__item-content-wrapper">
-	            <div class="menu__item-content{if gt($totalsubitems, 0)} menu__item--submenu{/if}">
+	            <div class="menu__item-content{if eq($i,3)} menu__item--submenu{/if}">
 	                <a href={$:item.url_alias|ezurl} class="menu__item-link{if $nodebane|contains($:item.node_id)} menu__item-link--active{/if}">{$:item.name}</a>
-	                {if gt($totalsubitems, 0)}<i class="icon--menu-arrow-down menu__item__dropdown hide--to-l"></i><i class="icon--menu-arrow-right menu__item__dropdown hide--from-l js-menu-dropdown"></i>{/if}
+	                {if eq($i,3)}<i class="icon--menu-arrow-down menu__item__dropdown hide--to-l"></i><i class="icon--menu-arrow-right menu__item__dropdown hide--from-l js-menu-dropdown"></i>{/if}
 	            </div>
     {/if}
     {*End of hide hidden folders*}
