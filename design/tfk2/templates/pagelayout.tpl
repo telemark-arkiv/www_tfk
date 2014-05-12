@@ -99,7 +99,7 @@
   {include uri='design:page_header.tpl'}
   <!-- Header area: END -->
 
-  <!-- Her comes main -->
+  <!-- Here comes main -->
   <main id="main" role="main" tabindex="-1">
 
 
@@ -170,7 +170,7 @@
   {set scope=global $persistent_variable=$#persistent_variable|merge( hash( 'addsection', 1 ) )}
 {/if}
 
-  <div id="main">
+
   
 {if $pagedata.extra_menu|not}
   <!-- Frontpage start -->
@@ -258,7 +258,7 @@
 
 
 <!-- main: END -->
-</div> 
+
 {*
   {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
 *}

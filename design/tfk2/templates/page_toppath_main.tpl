@@ -1,3 +1,5 @@
+
+{*
 {def $campaigns=fetch( 'content', 'list', hash( 'parent_node_id', '2',
                                                    'class_filter_type', 'include',
                                                    'class_filter_array', array( 'kampanjecontainer' ) ) ) }
@@ -11,3 +13,4 @@
 		</div>
 	</div>
 {/if}
+*}
