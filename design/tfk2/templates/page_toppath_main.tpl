@@ -3,9 +3,8 @@
                                                    'class_filter_array', array( 'kampanjecontainer' ) ) ) }
 
 {if $campaigns}
-	<!-- visual block -->
-	<div class="visual">
-		<div class="visual-wrapper">
+	<div class="content">
+        <div class="constrained-content">
 			{foreach $campaigns as $campaign}
         		{node_view_gui content_node=$campaign view=full}
     		{/foreach}
