@@ -23,9 +23,9 @@
                     <picture>
                         <!--[if IE 9]><video style="display: none;"><![endif]-->
                         <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_12].full_path}" media="(min-width: 886px)"/>
-                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_9].full_path}" media="(min-width: 600px)"/>
-                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_6].full_path}" media="(min-width: 400px)"/>
-                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_4].full_path}"/>
+                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_09].full_path}" media="(min-width: 600px)"/>
+                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_06].full_path}" media="(min-width: 400px)"/>
+                        <source srcset="/{$kampanjebilde.data_map.image.content.[responsive_04].full_path}"/>
                         <!--[if IE 9]></video><![endif]-->
                         <img srcset="{$kampanjebilde.data_map.image.content.[responsive_12].full_path}" alt="{$kampanjeelement.data_map.title.content}"/>
                     </picture>
