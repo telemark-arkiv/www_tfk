@@ -68,8 +68,9 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 
 		{section loop=fetch(content,list,hash(parent_node_id,$:item.node_id, class_filter_type, "include", class_filter_array, array(1),sort_by,$:item.sort_array))}
 		{let child_check1=fetch(content,list,hash(parent_node_id,$:item.node_id, class_filter_type, "include", class_filter_array, array(1),sort_by,$:item.sort_array))}
+		{*
 		{if and(eq( $currentcol, 0 ), ge( $totalsubitems, 4 )) } {set $y=inc( $y )} {set $currentcol=$columns} </ul><ul class="col{$y}">{/if}
-
+        *}
 	       {* <li class="{if eq($current_node_id, $:item.node_id)}active{/if}"><a href={$:item.url_alias|ezurl}><span>{$:item.name}</span></a></li>*}
 
 	       <li class="menu__submenu-item">
