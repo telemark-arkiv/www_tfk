@@ -59,6 +59,40 @@
     </div>
 {/if}
 
+
+
+
+<div class="content">
+    <div class="constrained-content">
+        <h2>Ledige stillinger</h2>
+            <div class="clearfix grid" data-ng-app="tfk-recruitment-app" data-ng-controller="RecruitmentsCtrl">
+
+                <div class="grid__item--3-12" data-ng-repeat="r in recruitments_list.results | orderBy:predicate | limitTo:limit">
+                  <div class="item media">
+                    <div class="item__icon media__img icon--person"></div>
+                    <div class="media__bd">
+                      <h3 class="item__header"><a href="https://hrm.btvregion.no/tfk_recruitment/">[[[ r.title ]]]</a></h3><span class="sidenote">Søknadsfrist: [[[ r.deadline | date:"dd.MM.yyyy" ]]]</span>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+        <div class="clearfix"><a href="https://hrm.btvregion.no/tfk_recruitment/" class="see-more">Se alle ledige stillinger</a></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{*
 <div class="tab-block" data-ng-app="tfk-recruitment-app" data-ng-controller="RecruitmentsCtrl">
     <div class="tab-content">
       <section class="holder">
@@ -76,4 +110,4 @@
       <span class="link-more"><a href="https://hrm.btvregion.no/tfk_recruitment" target="_blank">SE ALLE LEDIGE STILLINGER</a></span>
     </div>
 </div>
-
+*}
