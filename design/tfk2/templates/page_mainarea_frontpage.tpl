@@ -11,9 +11,6 @@
             {/foreach}
         {/if}
 
-
-
-
         {def $slogans=array()}
         {def $slogans_count = 0}
         {def $slogans=fetch( 'content', 'list', hash( 'parent_node_id', '7184',
@@ -24,7 +21,6 @@
   
         {undef $slogans_count}
         {undef $slogans}
-
 
         <div class="social-block quote">
             <div class="social-block__social-links">
@@ -38,37 +34,30 @@
             </div>
             <div class="social-block__other">{$random_slogan.data_map.entry.data_text}</div>
         </div>
+    </div>
+</div>
 
-  {*
-  <div class="info-row">
-    <h1>{$random_slogan.data_map.entry.data_text}</h1>
-    <ul class="social-networks">
-      <li><a class="facebook" href="https://www.facebook.com/telemarkfylke" title="Følg oss på Facebook" target="_blank">facebook</a></li>
-      <li><a class="twitter" href="https://twitter.com/telemarkfylke" title="Følg oss på Twitter" target="_blank">twitter</a></li>
-      <li><a class="gplus" href="https://plus.google.com/108353607427028279455" title="Følg oss på Google+" target="_blank">google+</a></li>
-      <li><a class="rss" href="http://www.telemark.no/rss/feed/aktuelt" title="Abonner på siste nytt via rss" target="_blank">rss</a></li>
-      <li><a class="email" href="mailto:post@t-fk.no" title="Send oss en e-post">email</a></li>
-    </ul>
-  </div>
-  *}
 
-  {def $tabcontainers=fetch( 'content', 'list', hash( 'parent_node_id', '2',
+{def $tabcontainers=fetch( 'content', 'list', hash( 'parent_node_id', '2',
                                                       'class_filter_type', 'include',
                                                       'class_filter_array', array( 'tabboks' ) ) ) }
 
-  {if $tabcontainers}
-    <!-- info-block -->
-    <div class="info-block">
-        {foreach $tabcontainers as $tabcontainer}
-            {node_view_gui content_node=$tabcontainer view=forside}
-        {/foreach}
+{if $tabcontainers}
+     <div class="content highlight">
+        <div class="constrained-content">
+            {foreach $tabcontainers as $tabcontainer}
+                {node_view_gui content_node=$tabcontainer view=forside}
+            {/foreach}
+        </div>
     </div>
-  {else}
-    <div class="info-block">
-      <p>Opppsann... her ser det ut til å være noe galt som ikke er riktig.</p>
-      <p>Noen jobber med saken.</p>
+{else}
+    <div class="content highlight">
+        <div class="constrained-content">
+            <p>Opppsann... her ser det ut til å være noe galt som ikke er riktig.</p>
+            <p>Noen jobber med saken.</p>
+        </div>
     </div>
-  {/if}
+{/if}
 
 <div class="tab-block" data-ng-app="tfk-recruitment-app" data-ng-controller="RecruitmentsCtrl">
     <div class="tab-content">
@@ -88,5 +77,3 @@
     </div>
 </div>
 
-    </div>
-</div>
