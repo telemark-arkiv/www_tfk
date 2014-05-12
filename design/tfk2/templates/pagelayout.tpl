@@ -106,11 +106,13 @@
   {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
 *}
 
+{*
   <!-- Top menu area: START -->
   {if $pagedata.top_menu}
    {include uri='design:menu/menu_top.tpl' nodebane=$dennenoden.path_array}
   {/if}
   <!--  Top menu area: END -->
+*}
 
   <!-- Visualblock area: START -->
   {include uri='design:page_visualblock.tpl'}
