@@ -3,6 +3,9 @@
 <script src="/extension/www_tfk/design/tfk2/javascript/main-c9aacf34.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/slider-45281904.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tabs-63bab98a.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/angular-1.0.1.min.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/angular-resource-1.0.1.min.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/tfk-recruitment-app.js"></script>
 
 {*
 {if $pagedesign.data_map.footer_script.has_content}
