@@ -99,16 +99,19 @@
   {include uri='design:page_header.tpl'}
   <!-- Header area: END -->
 
-
+  <!-- Her comes main -->
+  <main id="main" role="main" tabindex="-1">
 
 
 {*
   {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
 *}
 
+{*
   <!-- Visualblock area: START -->
   {include uri='design:page_visualblock.tpl'}
   <!-- Visualblock area: START -->
+*}
 
   <!-- Path area: START -->
   {* Sjekker om current_node_id er hovedsiden (id 2) *}
@@ -276,6 +279,9 @@
   </div>
   </div>
   <!-- Columns area: END -->
+
+
+</main>
 
   <!-- Footer area: START -->
   {include uri='design:page_footer.tpl'}
