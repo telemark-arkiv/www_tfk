@@ -1,6 +1,3 @@
-{if $addsection}
-<article id="content">
-{/if}
 <!-- Main area content: START -->
 {$module_result.content}
 
@@ -23,6 +20,3 @@
 	{/if}
 {/if}
 <!-- Main area content: END -->
-{if $addsection}
-</article>
-{/if}

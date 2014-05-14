@@ -273,8 +273,7 @@
     <!-- Extra area: END -->
 *}
 
-  </div>
-  </div>
+
   <!-- Columns area: END -->
 
 
