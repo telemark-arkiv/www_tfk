@@ -11,17 +11,7 @@
                 </ul>
             </div>
             <div class="media__bd">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb__item"><a href="//localhost:9000/" class="breadcrumb__item__link">Forside</a>
-                    <div class="breadcrumb__item__separator">/</div>
-                  </li>
-                  <li class="breadcrumb__item"><a href="//localhost:9000/aktuelt/index.html" class="breadcrumb__item__link">Aktuelt</a>
-                    <div class="breadcrumb__item__separator">/</div>
-                  </li>
-                  <li class="breadcrumb__item">
-                    <div class="breadcrumb__item__link breadcrumb__item__link--active">Vil støtte «Kampen om tungtvannet»</div>
-                  </li>
-                </ul>
+                {include uri=concat('design:parts/', $pagedata.show_path, '.tpl')}
             </div>
         </div>
     </div>
