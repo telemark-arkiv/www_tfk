@@ -1,11 +1,3 @@
-{*
-{def $section_added=fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                    'limit', 1,
-                                                    'class_filter_type', 'include',
-                                                    'class_filter_array', array( 'infobox' ) ) ) }
-*}
-
-
 {def $section_added=''}
 {def $unfiltered_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $node.path_array,
                                                       'class_filter_type', 'include',
@@ -15,6 +7,66 @@
     {set $section_added=1}
   {/if}
 {/foreach}
+
+<article class="main__center">
+    <header class="article__header">
+        <h1>{$node.data_map.title.content|wash()}</h1>
+        <div class="sidenote">
+            {section show=$node.data_map.author.content.is_empty|not()}
+                Av: {attribute_view_gui attribute=$node.data_map.author}
+            {/section}
+
+            {if $node.data_map.show_publishdate.content}
+                / Publisert: {$node.object.published|l10n(shortdate)} / Oppdatert: {$node.object.modified|l10n(shortdate)}
+            {/if}
+        </div>
+    </header>
+    {if $node.data_map.do_show_image.content}
+        {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
+        {if $ingressbilde}
+            <div class="top-image">
+                <picture><!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_06}" media="(min-width: 1024px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_12}" media="(min-width: 846px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_09}" media="(min-width: 560px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_06}" media="(min-width: 360px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_04}"><!--[if IE 9]></video><![endif]-->
+                    <img srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_04}" alt="{$ingressbilde.data_map.image.content.alternative_text}">
+                </picture>
+                <div class="top-image__text-wrapper">
+                    <div class="top-image__text">
+                        {if $node.data_map.image_title.content}
+                            <div class="top-image__header">
+                                {attribute_view_gui attribute=$node.data_map.image_title}
+                            </div>
+                        {/if}
+                        <div class="top-image__body">
+                            {if $node.data_map.image_text.content}
+                                {attribute_view_gui attribute=$node.data_map.image_text}<br />
+                            {/if}
+                            {if $ingressbilde.data_map.foto_byline.content}
+                                <em>Foto: {$ingressbilde.data_map.foto_byline.content}</em>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/if}
+    {/if}
+
+    {section show=$node.data_map.intro.content.is_empty|not}
+        <p class="byline">{attribute_view_gui attribute=$node.data_map.intro}</p>
+    {/section}
+
+    {section show=$node.data_map.body.content.is_empty|not}
+        {attribute_view_gui attribute=$node.data_map.body}
+    {/section}
+
+</article>
+
+
+{*
+
 
 <div class="info-area">
     <h1>// {$node.data_map.title.content|wash()}</h1>
@@ -136,3 +188,4 @@
         {node_view_gui content_node=$innhold view='full'}
     {/foreach}
 {/if}
+*}
