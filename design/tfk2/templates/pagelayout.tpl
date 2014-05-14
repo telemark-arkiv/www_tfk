@@ -235,8 +235,6 @@
     <!-- Sidebar infoboxes: START -->
     {include uri='design:page_sidebar_calendar.tpl'}
     <!-- Sidebar infoboxes: END -->
-</div>
- 
 
 <!-- Section Main-Block: END-->
 

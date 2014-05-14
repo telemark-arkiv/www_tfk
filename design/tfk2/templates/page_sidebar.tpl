@@ -1,7 +1,6 @@
 <!-- sidebar -->
 
 {if $infoboxes}
-  <aside id="sidebar">
       {foreach $infoboxes as $infobox}
           {node_view_gui content_node=$infobox view=line}
       {/foreach}
@@ -200,5 +199,4 @@
     </div>
       {/if}
 
-  </aside>
 {/if}
