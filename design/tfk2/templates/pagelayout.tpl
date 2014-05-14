@@ -182,25 +182,25 @@
  <!-- Dette er en media side-->
 
   {elseif $addsection}
-    <section class="main-block"><!-- Section Main-Block: START-->
+
      <!-- LeftSide menu area: START -->
     {include uri='design:menu/page_leftmenu.tpl'}
     <!-- LeftSide menu area: END -->
-    <div class="content-holder">
+
 
 
     {elseif eq($current_class_identifier, 'event_calendar')}
 
-    <section class="main-block"><!-- Section Main-Block: START-->
+    <!-- Section Main-Block: START-->
      <!-- LeftSide menu area: START -->
     {include uri='design:menu/page_leftmenu.tpl'}
     <!-- LeftSide menu area: END -->
-    <div class="content-holder">
+
 
 
   {else}
     <!-- content-block -->
-      <div class="content-holder">
+
   {/if}
    
 
@@ -228,10 +228,7 @@
     <!-- Sidebar infoboxes: START -->
     {include uri='design:page_sidebar.tpl' current_node_id=$current_node_id}
     <!-- Sidebar infoboxes: END -->
-</div>
- 
-
-</section><!-- Section Main-Block: END-->
+<!-- Section Main-Block: END-->
 
 {elseif eq($current_class_identifier, 'event_calendar')}
 
@@ -241,12 +238,12 @@
 </div>
  
 
-</section><!-- Section Main-Block: END-->
+<!-- Section Main-Block: END-->
 
 
 {else}
  
-</div>
+
   <!-- LeftSide menu area: START -->
   {include uri='design:menu/page_leftmenu.tpl'}
   <!-- LeftSide menu area: END -->
@@ -283,6 +280,7 @@
 
 </main>
 
+
   <!-- Footer area: START -->
   {include uri='design:page_footer.tpl'}
   <!-- Footer area: END -->
@@ -296,6 +294,8 @@
 
 {* This comment will be replaced with actual debug report (if debug is on). *}
 <!--DEBUG_REPORT-->
+        </div>
+    </div>
 </body>
 <!-- Footer script area: START -->
 {include uri='design:page_footer_script.tpl'}
