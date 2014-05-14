@@ -26,12 +26,12 @@
         {if $ingressbilde}
             <div class="top-image">
                 <picture><!--[if IE 9]><video style="display: none;"><![endif]-->
-                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_06}" media="(min-width: 1024px)">
-                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_12}" media="(min-width: 846px)">
-                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_09}" media="(min-width: 560px)">
-                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_06}" media="(min-width: 360px)">
-                    <source srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_04}"><!--[if IE 9]></video><![endif]-->
-                    <img srcset="/{$ingressbilde.data_map.image.content.[ingress_smal].responsive_04}" alt="{$ingressbilde.data_map.image.content.alternative_text}">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[responsive_06].full_path}" media="(min-width: 1024px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[responsive_12].full_path}" media="(min-width: 846px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[responsive_09].full_path}" media="(min-width: 560px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[responsive_06].full_path}" media="(min-width: 360px)">
+                    <source srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path}"><!--[if IE 9]></video><![endif]-->
+                    <img srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path}" alt="{$ingressbilde.data_map.image.content.alternative_text}">
                 </picture>
                 <div class="top-image__text-wrapper">
                     <div class="top-image__text">
