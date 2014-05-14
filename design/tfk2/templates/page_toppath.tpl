@@ -1,3 +1,40 @@
+<div class="content">
+    <div class="constrained">
+        <div class="media">
+            <div class="media__img--right">
+                <ul class="social-links social-links--small">
+                  <li><a href="https://www.facebook.com/telemarkfylke" class="social-links__link social-links__link--small"><span title="Facebook" class="social-links__link__icon social-links__link__icon--small icon--facebook-16"></span><span class="visuallyhidden">Facebook</span></a></li>
+                  <li><a href="https://twitter.com/telemarkfylke" class="social-links__link social-links__link--small"><span title="Twitter" class="social-links__link__icon social-links__link__icon--small icon--twitter-16"></span><span class="visuallyhidden">Twitter</span></a></li>
+                  <li><a href="https://plus.google.com/108353607427028279455/" class="social-links__link social-links__link--small"><span title="Google+" class="social-links__link__icon social-links__link__icon--small icon--google-16"></span><span class="visuallyhidden">Google+</span></a></li>
+                  <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.telemark.no%2FVaare-tjenester%2FArealbruk-og-transport%23.U1fBfzuMMK0.linkedin&amp;title=Arealbruk+og+transport+%2F+V%C3%A5re+tjenester+%2F+Start+-+Telemark+fylkeskommune&amp;ro=false&amp;summary=&amp;source=" class="social-links__link social-links__link--small"><span title="LinkedIn" class="social-links__link__icon social-links__link__icon--small icon--linkedin-16"></span><span class="visuallyhidden">LinkedIn</span></a></li>
+                  <li><a href="mailto:post@t-fk.no" class="social-links__link social-links__link--small"><span title="Send oss en e-post" class="social-links__link__icon social-links__link__icon--small icon--mailto-16"></span><span class="visuallyhidden">Send oss en e-post</span></a></li>
+                </ul>
+            </div>
+            <div class="media__bd">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb__item"><a href="//localhost:9000/" class="breadcrumb__item__link">Forside</a>
+                    <div class="breadcrumb__item__separator">/</div>
+                  </li>
+                  <li class="breadcrumb__item"><a href="//localhost:9000/aktuelt/index.html" class="breadcrumb__item__link">Aktuelt</a>
+                    <div class="breadcrumb__item__separator">/</div>
+                  </li>
+                  <li class="breadcrumb__item">
+                    <div class="breadcrumb__item__link breadcrumb__item__link--active">Vil støtte «Kampen om tungtvannet»</div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{*
+
 <div class="visual-block visual-holder">
 <div class="visual-block-holder">
   <div class="frame">
@@ -25,4 +62,4 @@
 
 </div>
 </div>
-
+*}
