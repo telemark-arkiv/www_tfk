@@ -5,10 +5,10 @@
             {if $path.url}
                 <a href={cond( is_set( $path.url_alias ), $path.url_alias,
                                         $path.url )|ezurl} class="breadcrumb__item__link">{$path.text|wash}</a>
+                                        {delimiter}<div class="breadcrumb__item__separator">/</div>{/delimiter}
             {else}
                 <div class="breadcrumb__item__link breadcrumb__item__link--active">{$path.text|wash}</div>
             {/if}
-            {delimiter}<div class="breadcrumb__item__separator">/</div>{/delimiter}
         </li>
     {/foreach}
 </ul>
