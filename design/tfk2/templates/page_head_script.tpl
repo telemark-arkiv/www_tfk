@@ -14,6 +14,10 @@
         document.createElement('hgroup');
         </script>
 <![endif]-->
+
+{/literal}
+
+(*
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -28,7 +32,8 @@
   })();
 
 </script>
-{/literal}
+*}
+
 
  <script src="/extension/www_tfk/design/tfk2/javascript/vendor/modernizr-custom-0.4.1-bc302104.js"></script>
     <script>
