@@ -85,8 +85,7 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 		</a>
 		{/section}
 		{if (not(eq($:item.object.data_map.hide_from_main_menu.content, 1))}
-		    </div>
-		    </li>
+
 		{/if}
 		{/let}	
 		{/section}
