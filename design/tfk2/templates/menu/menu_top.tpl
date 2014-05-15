@@ -76,8 +76,11 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
         </div>
         </li>
 		{else}
+		{if eq($:item.data_map.hide_from_main_menu.content, 0)}
+		{* If not hidden folders *}
 		</div>
 		</li>
+		{/if}
 		{/if}
 		{*END OF SHOWS ONLY MENU 3*}
 
