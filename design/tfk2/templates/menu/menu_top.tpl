@@ -75,6 +75,7 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 		</ul>
 
 		{else}
+		</div>
 		</li>
 		{/if}
 		{*END OF SHOWS ONLY MENU 3*}
