@@ -51,28 +51,15 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 	{if eq($i,3)} {*SHOWS ONLY MENU 3*}
         {set $totalsubitems=$child_check|count}
 
-	{*
-	<div class="drop-area {if le($totalsubitems, 4)}drop-area-small{/if}">
-	<div class="drop {if le($totalsubitems, 4)}drop-small{/if}">
-	<strong class="arrow">&nbsp;</strong>
-	<div class="drop-holder">
-	
-		<div class="dropholder">
-    *}
+
 		{set $y=1}
 		{set $columns=ceil( div( $child_check|count, 3 ) )}
 		{set $currentcol=$columns}
-
-		{*<ul class="col{$y}">*}
 
 		<ul class="menu__submenu menu__level">
 
 		{section loop=fetch(content,list,hash(parent_node_id,$:item.node_id, class_filter_type, "include", class_filter_array, array(1),sort_by,$:item.sort_array))}
 		{let child_check1=fetch(content,list,hash(parent_node_id,$:item.node_id, class_filter_type, "include", class_filter_array, array(1),sort_by,$:item.sort_array))}
-		{*
-		{if and(eq( $currentcol, 0 ), ge( $totalsubitems, 4 )) } {set $y=inc( $y )} {set $currentcol=$columns} </ul><ul class="col{$y}">{/if}
-        *}
-	       {* <li class="{if eq($current_node_id, $:item.node_id)}active{/if}"><a href={$:item.url_alias|ezurl}><span>{$:item.name}</span></a></li>*}
 
 	       <li class="menu__submenu-item">
 	            <a href={$:item.url_alias|ezurl} class="menu__item-link{if eq($current_node_id, $:item.node_id)} menu__item-link--active{/if}">{$:item.name}</a>
@@ -86,8 +73,12 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 			{/let}	
 			{/section}
 		</ul>
-		{*</div></div></div></div>*}
-		{/if} {*END OF SHOWS ONLY MENU 3*}
+
+		{else}
+		</li>
+		{/if}
+		{*END OF SHOWS ONLY MENU 3*}
+
 		{section-else}
 		</a>
 		{/section}
