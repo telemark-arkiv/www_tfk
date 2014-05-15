@@ -100,7 +100,9 @@
   <!-- Header area: END -->
 
   <!-- Here comes main -->
-  <main id="main" role="main" tabindex="-1">
+<div class="content">
+          <div class="constrained">
+        <main id="main" role="main" tabindex="-1">
 
 
 {*
@@ -275,8 +277,9 @@
   <!-- Columns area: END -->
 
 
-</main>
-
+        </main>
+    </div>
+</div>
 
   <!-- Footer area: START -->
   {include uri='design:page_footer.tpl'}
