@@ -73,7 +73,8 @@ it. For example, replace array(1) by array(1,2) for each fetch functions if you 
 			{/let}	
 			{/section}
 		</ul>
-
+        </div>
+        </li>
 		{else}
 		</div>
 		</li>
