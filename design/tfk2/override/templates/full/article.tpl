@@ -55,7 +55,7 @@
     {/if}
 
     {section show=$node.data_map.intro.content.is_empty|not}
-        <p class="byline">{attribute_view_gui attribute=$node.data_map.intro}</p>
+        <div class="byline">{attribute_view_gui attribute=$node.data_map.intro}</div>
     {/section}
 
     {section show=$node.data_map.body.content.is_empty|not}
