@@ -293,8 +293,8 @@
 <!--DEBUG_REPORT-->
         </div>
     </div>
+    <!-- Footer script area: START -->
+    {include uri='design:page_footer_script.tpl'}
+    <!-- Footer script area: END -->
 </body>
-<!-- Footer script area: START -->
-{include uri='design:page_footer_script.tpl'}
-<!-- Footer script area: END -->
 </html>
