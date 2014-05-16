@@ -18,7 +18,7 @@
 
 <div class="content">
     <div class="constrained">
-
+        <div class="main__center">
         {if $node.data_map.show_name.content}
             <h1>{$node.data_map.name.content|wash()}</h1>
         {/if}
@@ -58,6 +58,7 @@
         {if $node.data_map.short_description.has_content}
             <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
         {/if}
+        </div>
     </div>
 </div>
 
