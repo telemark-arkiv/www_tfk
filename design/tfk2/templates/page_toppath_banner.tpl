@@ -1,3 +1,43 @@
+<div class="content">
+    <div class="constrained">
+        <div class="media">
+            <div class="media__img--right">
+                <ul class="social-links social-links--small">
+                    <li><a href="https://www.facebook.com/telemarkfylke" class="social-links__link social-links__link--small"><span title="Facebook" class="social-links__link__icon social-links__link__icon--small icon--facebook-16"></span><span class="visuallyhidden">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/telemarkfylke" class="social-links__link social-links__link--small"><span title="Twitter" class="social-links__link__icon social-links__link__icon--small icon--twitter-16"></span><span class="visuallyhidden">Twitter</span></a></li>
+                    <li><a href="https://plus.google.com/108353607427028279455/" class="social-links__link social-links__link--small"><span title="Google+" class="social-links__link__icon social-links__link__icon--small icon--google-16"></span><span class="visuallyhidden">Google+</span></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.telemark.no%2FVaare-tjenester%2FArealbruk-og-transport%23.U1fBfzuMMK0.linkedin&amp;title=Arealbruk+og+transport+%2F+V%C3%A5re+tjenester+%2F+Start+-+Telemark+fylkeskommune&amp;ro=false&amp;summary=&amp;source=" class="social-links__link social-links__link--small"><span title="LinkedIn" class="social-links__link__icon social-links__link__icon--small icon--linkedin-16"></span><span class="visuallyhidden">LinkedIn</span></a></li>
+                    <li><a href="mailto:post@t-fk.no" class="social-links__link social-links__link--small"><span title="Send oss en e-post" class="social-links__link__icon social-links__link__icon--small icon--mailto-16"></span><span class="visuallyhidden">Send oss en e-post</span></a></li>
+                </ul>
+            </div>
+            <div class="media__bd">
+                {include uri=concat('design:parts/', $pagedata.show_path, '.tpl')}
+            </div>
+        </div>
+        <div class="top-image top-image--large">
+            <picture><!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="/{$banner_bilde.data_map.image.content.[responsive_12].full_path}" media="(min-width: 886px)">
+                  <source srcset="/{$banner_bilde.data_map.image.content.[responsive_09].full_path}" media="(min-width: 600px)">
+                  <source srcset="/{$banner_bilde.data_map.image.content.[responsive_06].full_path}" media="(min-width: 400px)">
+                  <source srcset="/{$banner_bilde.data_map.image.content.[responsive_04].full_path}"><!--[if IE 9]></video><![endif]-->
+                  <img srcset="/{$banner_bilde.data_map.image.content.[responsive_04].full_path}" alt="{$banner_bilde.data_map.image.content.alternative_text}">
+            </picture>
+            <!--img.top-image__img(src="/{$banner_bilde.data_map.image.content.[responsive_12].full_path}")-->
+            <div class="top-image__text-wrapper">
+                <div class="top-image__text">
+                    <h2 class="top-image__header">{$dennemappen.data_map.banner_title.content}</h2>
+                    <div class="top-image__body">
+                        {$dennemappen.data_map.banner_text.content}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{*
 <div class="visual-block visual-holder">
             <div class="visual-block-holder">
                 <div class="frame">
@@ -32,3 +72,4 @@
                 </div>
             </div>
         </div>
+*}
