@@ -84,7 +84,6 @@
 </head>
 <body>
 <!-- Change between "sidemenu"/"nosidemenu" and "extrainfo"/"noextrainfo" to switch display of side columns on or off  -->
-{*<div id="page" class="{$pagestyle}">*}
 
   {if and( is_set( $pagedata.persistent_variable.extra_template_list ),
              $pagedata.persistent_variable.extra_template_list|count() )}
@@ -92,85 +91,67 @@
       {include uri=concat('design:extra/', $extra_template)}
     {/foreach}
   {/if}
+
 <div class="menu-container">
-      <div id="mp-pusher" class="menu-pusher">
+    <div id="mp-pusher" class="menu-pusher">
 
-  <!-- Header area: START -->
-  {include uri='design:page_header.tpl'}
-  <!-- Header area: END -->
+        <!-- Header area: START -->
+        {include uri='design:page_header.tpl'}
 
-  <!-- Here comes main -->
-<div class="content">
-          <div class="constrained">
-        <main id="main" role="main" tabindex="-1">
+        <!-- Header area: END -->
 
-
-{*
-  {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
-*}
-
-{*
-  <!-- Visualblock area: START -->
-  {include uri='design:page_visualblock.tpl'}
-  <!-- Visualblock area: START -->
-*}
-
-  <!-- Path area: START -->
-  {* Sjekker om current_node_id er hovedsiden (id 2) *}
-  {if or( $module_result.node_id|is_set|not, $module_result.node_id|ne( 2 ) )}
-    {if $banner_bilde}
-      {include uri='design:page_toppath_banner.tpl'}
-    {else}
-      {include uri='design:page_toppath.tpl'}
-    {/if}
-  {else}
-    {def $isfrontpage=1}
-    {include uri='design:page_toppath_main.tpl'}
-  {/if}
-  <!-- Path area: END -->
-
-  <!-- Toolbar area: START -->
-  {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}
-    {include uri='design:page_toolbar.tpl'}
-  {/if}
-  <!-- Toolbar area: END -->
-  <!-- main: START -->
-
-{*
-   {/cache-block}
-{/cache-block}
-*}
+        <!-- Here comes main -->
+        <div class="content">
+            <div class="constrained">
+                <main id="main" role="main" tabindex="-1">
 
 
-{*
-{def $infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $current_node_id,
-                                                      'sort_by', $dennenoden.sort_array,
-                                                      'class_filter_type', 'include',
-                                                      'class_filter_array', array( 'infobox' ) ) ) }
+                    {*
+                      {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
+                    *}
 
-{def $inherited_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $dennenoden.parent.path_array,
-                                                      'class_filter_type', 'include',
-                                                      'class_filter_array', array( 'infobox' ) ) ) }
+                    <!-- Path area: START -->
+                    {* Sjekker om current_node_id er hovedsiden (id 2) *}
+                    {if or( $module_result.node_id|is_set|not, $module_result.node_id|ne( 2 ) )}
+                        {if $banner_bilde}
+                            {include uri='design:page_toppath_banner.tpl'}
+                        {else}
+                            {include uri='design:page_toppath.tpl'}
+                        {/if}
+                    {else}
+                        {def $isfrontpage=1}
+                            {include uri='design:page_toppath_main.tpl'}
+                    {/if}
+                    <!-- Path area: END -->
 
-*}
+                    <!-- Toolbar area: START -->
+                    {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}
+                        {include uri='design:page_toolbar.tpl'}
+                    {/if}
+                    <!-- Toolbar area: END -->
+                    <!-- main: START -->
+
+                    {*
+                       {/cache-block}
+                    {/cache-block}
+                    *}
+
+                    {def $infoboxes=array()}
+                    {def $unfiltered_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $dennenoden.path_array,
+                                                                          'sort_by', $dennenoden.sort_array,
+                                                                          'class_filter_type', 'include',
+                                                                          'class_filter_array', array( 'infobox' ) ) ) }
+                    {foreach $unfiltered_infoboxes as $ib}
+                      {if or($ib.data_map.inherit.content, eq($ib.parent_node_id, $current_node_id))}
+                        {set $infoboxes=$infoboxes|append($ib)}
+                      {/if}
+                    {/foreach}
 
 
-{def $infoboxes=array()}
-{def $unfiltered_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $dennenoden.path_array,
-                                                      'sort_by', $dennenoden.sort_array,
-                                                      'class_filter_type', 'include',
-                                                      'class_filter_array', array( 'infobox' ) ) ) }
-{foreach $unfiltered_infoboxes as $ib}
-  {if or($ib.data_map.inherit.content, eq($ib.parent_node_id, $current_node_id))}
-    {set $infoboxes=$infoboxes|append($ib)}
-  {/if}
-{/foreach}
-
-
-{if $infoboxes}
-  {def $addsection=1}
-  {set scope=global $persistent_variable=$#persistent_variable|merge( hash( 'addsection', 1 ) )}
-{/if}
+                    {if $infoboxes}
+                      {def $addsection=1}
+                      {set scope=global $persistent_variable=$#persistent_variable|merge( hash( 'addsection', 1 ) )}
+                    {/if}
 
 
   
@@ -285,7 +266,7 @@
   {include uri='design:page_footer.tpl'}
   <!-- Footer area: END -->
 
-{*</div>*}
+
 <!-- Complete page area: END -->
 
 {*
