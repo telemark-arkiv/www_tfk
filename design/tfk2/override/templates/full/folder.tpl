@@ -17,7 +17,7 @@
 {/foreach}
 
 <div class="main">
-                <div class="main__center">
+    <div class="main__center">
         {if $node.data_map.show_name.content}
             <h1>{$node.data_map.name.content|wash()}</h1>
         {/if}
@@ -57,7 +57,7 @@
         {if $node.data_map.short_description.has_content}
             <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
         {/if}
-        </div>
+
 
             {if $node.data_map.description.has_content}
                       {attribute_view_gui attribute=$node.data_map.description}
