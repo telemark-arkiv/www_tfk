@@ -1,8 +1,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/extension/www_tfk/design/tfk2/javascript/vendor/jquery-1.10.2.min.js"><' + '/script>');</script>
-<script src="/extension/www_tfk/design/tfk2/javascript/main-c9aacf34.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript/slider-45281904.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript/tabs-63bab98a.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/main-b366f742.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/slider-e1ab9eb5.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/tabs-b49945e1.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-resource-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tfk-recruitment-app.js"></script>
