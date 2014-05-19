@@ -154,40 +154,6 @@
                     {/if}
 
 
-  
-{if $pagedata.extra_menu|not}
-  <!-- Frontpage start -->
-  <!-- Columns area: START -->
-  {elseif $is_landingpage}
-    <!-- Dette er en landingsside-->
-
-{elseif eq($module_result.section_id, 3)}
- <!-- Dette er en media side-->
-
-  {elseif $addsection}
-
-     <!-- LeftSide menu area: START -->
-    {include uri='design:menu/page_leftmenu.tpl'}
-    <!-- LeftSide menu area: END -->
-
-
-
-    {elseif eq($current_class_identifier, 'event_calendar')}
-
-    <!-- Section Main-Block: START-->
-     <!-- LeftSide menu area: START -->
-    {include uri='design:menu/page_leftmenu.tpl'}
-    <!-- LeftSide menu area: END -->
-
-
-
-  {else}
-    <!-- content-block -->
-
-  {/if}
-   
-
- 
     <!-- Main area: START -->
     {if $is_landingpage}
       <!-- Landingsside  -->
@@ -232,7 +198,37 @@
 
 
 
-    
+{if $pagedata.extra_menu|not}
+  <!-- Frontpage start -->
+  <!-- Columns area: START -->
+  {elseif $is_landingpage}
+    <!-- Dette er en landingsside-->
+
+{elseif eq($module_result.section_id, 3)}
+ <!-- Dette er en media side-->
+
+  {elseif $addsection}
+
+     <!-- LeftSide menu area: START -->
+    {include uri='design:menu/page_leftmenu.tpl'}
+    <!-- LeftSide menu area: END -->
+
+
+
+    {elseif eq($current_class_identifier, 'event_calendar')}
+
+    <!-- Section Main-Block: START-->
+     <!-- LeftSide menu area: START -->
+    {include uri='design:menu/page_leftmenu.tpl'}
+    <!-- LeftSide menu area: END -->
+
+
+
+  {else}
+    <!-- content-block -->
+
+  {/if}
+
 
 
 <!-- main: END -->
