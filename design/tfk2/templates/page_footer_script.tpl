@@ -3,6 +3,7 @@
 <script src="/extension/www_tfk/design/tfk2/javascript/main-b366f742.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/slider-e1ab9eb5.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tabs-b49945e1.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/popup-f4c6a538.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-resource-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tfk-recruitment-app.js"></script>
