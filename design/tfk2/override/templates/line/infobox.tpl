@@ -1,4 +1,4 @@
-
+<div>
     {if $node.object.data_map.hide_title.content|not}
         <h2>{$node.object.data_map.title.content|wash}</h2>
     {/if}
@@ -46,7 +46,7 @@
     {/if}
 
 
-
+</div>
 
 
 

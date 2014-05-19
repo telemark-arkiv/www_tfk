@@ -1,5 +1,5 @@
 <!-- sidebar -->
-
+<aside class="main__right">
 {if $infoboxes}
       {foreach $infoboxes as $infobox}
           {node_view_gui content_node=$infobox view=line}
@@ -200,3 +200,4 @@
       {/if}
 
 {/if}
+</aside>
