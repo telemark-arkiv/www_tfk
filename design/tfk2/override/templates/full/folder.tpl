@@ -1,11 +1,3 @@
-{*
-{def $section_added=fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                    'limit', 1,
-                                                    'class_filter_type', 'include',
-                                                    'class_filter_array', array( 'infobox' ) ) ) }
-
-*}
-
 {def $section_added=''}
 {def $unfiltered_infoboxes=fetch( 'content', 'list', hash( 'parent_node_id', $node.path_array,
                                                       'class_filter_type', 'include',
@@ -59,9 +51,9 @@
         {/if}
 
 
-            {if $node.data_map.description.has_content}
-                      {attribute_view_gui attribute=$node.data_map.description}
-                    {/if}
+        {if $node.data_map.description.has_content}
+            {attribute_view_gui attribute=$node.data_map.description}
+        {/if}
 
                     {if $node.object.data_map.show_children.data_int}
                         {def $limit=10
@@ -123,8 +115,8 @@
 
 
 
-    </div>
-</div>
+    </div><!-- class:main_center -->
+</div><!-- class:main -->
 
 
 
