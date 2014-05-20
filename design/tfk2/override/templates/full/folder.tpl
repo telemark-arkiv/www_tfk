@@ -14,6 +14,7 @@
             <h1>{$node.data_map.name.content|wash()}</h1>
         {/if}
 
+{*
         {if $node.data_map.do_show_image.content}
              {if $node.data_map.image.has_content}
                 {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
@@ -113,7 +114,7 @@
 
                     {/if}
 
-
+*}
 
     </div><!-- class:main_center -->
 </div><!-- class:main -->
