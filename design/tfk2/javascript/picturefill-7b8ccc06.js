@@ -1,4 +1,4 @@
-/*! telemark-frontend - v0.0.0 - 2014-05-19 *//*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
+/*! telemark-frontend - v0.0.0 - 2014-05-20 *//*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
 window.matchMedia || (window.matchMedia = function() {
     "use strict";
     var a = window.styleMedia || window.media;
