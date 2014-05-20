@@ -20,6 +20,11 @@
                             {/foreach}
                         {/if}
                     </div>
+                    {if $this_block_url}
+                        {if $tab.data_map.exit_url.data_text}
+                            <a href={$tab.data_map.exit_url.content|ezurl} class="see-more">{$tab.data_map.exit_url.data_text}</a>
+                        {/if}
+                    {/if}
                 </div>
         {/foreach}
     </ul>
