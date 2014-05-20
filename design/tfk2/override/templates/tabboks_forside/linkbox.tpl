@@ -26,7 +26,7 @@
             </h2>
         {/if}
         {if $node.data_map.description.content}
-            <p class="item__intro">{attribute_view_gui attribute=$node.data_map.description}</p>
+            <div class="item__intro">{attribute_view_gui attribute=$node.data_map.description}</div>
         {/if}
         {*
         {if $node.data_map.show_url_text.content}
@@ -37,32 +37,3 @@
         *}
     </div>
 </div>
-
-{*
-
-
-
-
-
-<article class="col" style="height: 350px;{if eq(mod($this_index,3), 0)} margin-left: 0;{/if}">
-    {if $linkbilde}
-        <a href={$this_block_url} target="{$this_block_target}">
-            <img src="/{$linkbilde.data_map.image.content.[listebilde_stort].full_path}" width="288" alt="{$node.data_map.alt_image_text.content|wash}" />
-        </a>
-    {/if}
-    <div class="frame">
-        {if $node.data_map.show_title.content}
-            <h2><a href={$this_block_url} target="{$this_block_target}">{$node.data_map.title.content|wash}</a></h2>
-        {/if}
-        {if $node.data_map.description.content}
-            {attribute_view_gui attribute=$node.data_map.description}
-        {/if}
-        {if $node.data_map.show_url_text.content}
-            {if $node.data_map.url.data_text.content}
-                <p><a href={$this_block_url} target="{$this_block_target}" class="more">{$node.data_map.url.data_text}</a></p>
-            {/if}
-        {/if}
-    </div>
-</article>
-
-*}
