@@ -8,7 +8,6 @@
   {/if}
 {/foreach}
 
-<div class="main">
     <div class="main__center">
         {if $node.data_map.show_name.content}
             <h1>{$node.data_map.name.content|wash()}</h1>
@@ -117,7 +116,6 @@
 *}
 
     </div><!-- class:main_center -->
-</div><!-- class:main -->
 
 
 

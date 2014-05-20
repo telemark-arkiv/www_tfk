@@ -155,6 +155,9 @@
 
 
     <!-- Main area: START -->
+    <div class="main">
+<div class="main">
+
     {if $is_landingpage}
       <!-- Landingsside  -->
       {include uri='design:page_landing_standard.tpl'}
@@ -230,7 +233,7 @@
   {/if}
 
 
-
+</div>
 <!-- main: END -->
 
 {*
