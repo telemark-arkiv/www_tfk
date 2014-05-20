@@ -8,10 +8,10 @@
   {/if}
 {/foreach}
 
-    <div class="main__center">
-        {if $node.data_map.show_name.content}
-            <h1>{$node.data_map.name.content|wash()}</h1>
-        {/if}
+<div class="main__center">
+    {if $node.data_map.show_name.content}
+        <h1>{$node.data_map.name.content|wash()}</h1>
+    {/if}
 
 {*
         {if $node.data_map.do_show_image.content}
@@ -46,14 +46,15 @@
                 {/if}
              {/if}
         {/if}
-        {if $node.data_map.short_description.has_content}
-            <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
-        {/if}
+*}
+    {if $node.data_map.short_description.has_content}
+        <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
+    {/if}
 
 
-        {if $node.data_map.description.has_content}
-            {attribute_view_gui attribute=$node.data_map.description}
-        {/if}
+    {if $node.data_map.description.has_content}
+        {attribute_view_gui attribute=$node.data_map.description}
+    {/if}
 
                     {if $node.object.data_map.show_children.data_int}
                         {def $limit=10
@@ -113,9 +114,9 @@
 
                     {/if}
 
-*}
 
-    </div><!-- class:main_center -->
+
+</div><!-- class:main_center -->
 
 
 
