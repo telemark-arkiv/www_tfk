@@ -155,7 +155,8 @@
 
 
     <!-- Main area: START -->
-    <div class="main">
+    <div class="content">
+    <div class="constrained-content">
 <div class="main">
 
     {if $is_landingpage}
@@ -233,6 +234,8 @@
   {/if}
 
 
+        </div>
+    </div>
 </div>
 <!-- main: END -->
 
