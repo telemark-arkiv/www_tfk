@@ -63,7 +63,7 @@
 
     {def $dennenode_ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $dennenoden.data_map.image.content.remote_id ) )}
     {if $dennenode_ingressbilde}
-        <meta property="og:image" content="http://www.telemark.no/{$dennenode_ingressbilde.data_map.image.content.[ingress_smal].full_path}">
+        <meta property="og:image" content="http://www.telemark.no/{$dennenode_ingressbilde.data_map.image.content.[responsive_06].full_path}">
     {/if}
 
 {/if}
@@ -76,7 +76,6 @@
     <meta name="description" content="{$dennenoden.data_map.meta_description.content|wash()}">
 
 {/if}
-
 
 {include uri='design:page_head_style.tpl'}
 {include uri='design:page_head_script.tpl'}
@@ -155,14 +154,18 @@
 
 
     <!-- Main area: START -->
-    <div class="content">
-    <div class="constrained-content">
-<div class="main">
+
 
     {if $is_landingpage}
       <!-- Landingsside  -->
+      <div class="content">
+          <div class="constrained-content">
+      <div class="main">
       {include uri='design:page_landing_standard.tpl'}
     {elseif or( $module_result.node_id|is_set|not, $module_result.node_id|ne( 2 ) )}
+    <div class="content">
+        <div class="constrained-content">
+    <div class="main">
       {include uri='design:page_mainarea.tpl' addsection=$addsection current_node_id=$current_node_id}
     {else}
       {include uri='design:page_mainarea_frontpage.tpl'}
@@ -234,9 +237,18 @@
   {/if}
 
 
+   {if $is_landingpage}
+        <!-- Landingsside: slutt  -->
+              </div>
+              </div>
+              </div>
+   {elseif or( $module_result.node_id|is_set|not, $module_result.node_id|ne( 2 ) )}
+        <!-- Vanlig side slutt-->
         </div>
-    </div>
-</div>
+        </div>
+        </div>
+   {/if}
+
 <!-- main: END -->
 
 {*
@@ -261,8 +273,8 @@
 
 
         </main>
-    </div>
-</div>
+    </div><!-- .menu-pusher -->
+</div><!-- .menu-container -->
 
   <!-- Footer area: START -->
   {include uri='design:page_footer.tpl'}
