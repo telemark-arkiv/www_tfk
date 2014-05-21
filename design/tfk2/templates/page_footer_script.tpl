@@ -1,9 +1,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/extension/www_tfk/design/tfk2/javascript/vendor/jquery-1.10.2.min.js"><' + '/script>');</script>
-<script src="/extension/www_tfk/design/tfk2/javascript/main-605960bc.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript/slider-fdff7c09.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript/tabs-eac936cb.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript/popup-73ee9c93.js"></script>
+<script>window.jQuery || document.write('<script src="/extension/www_tfk/design/tfk2/javascript/framework/vendor/jquery-1.10.2.min.js"><' + '/script>');</script>
+<script src="/extension/www_tfk/design/tfk2/javascript/framework/main-4532d501.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/slider-1291001d.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/tabs-4d0f569d.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/popup-e5e3e9e7.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-resource-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tfk-recruitment-app.js"></script>
