@@ -1,4 +1,3 @@
-<!-- ingressbilde.tpl -->
 {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
 {if $ingressbilde}
     <div class="top-image">
