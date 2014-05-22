@@ -21,7 +21,7 @@
             {/if}
         </div>
     </header>
-    {include uri='file:design/tfk2/templates/parts/ingressbilde.tpl' node=$node}
+    {include uri='design:parts/ingressbilde.tpl' node=$node}
     {if $node.data_map.do_show_image.content}
         {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
         {if $ingressbilde}
