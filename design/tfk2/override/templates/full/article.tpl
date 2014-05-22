@@ -22,8 +22,6 @@
         </div>
     </header>
     {if $node.data_map.do_show_image.content}
-        {include uri='design/page_ingressbilde.tpl' node=$node}
-        {*
         {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
         {if $ingressbilde}
             <div class="top-image">
@@ -56,7 +54,6 @@
                 </div>
             </div>
         {/if}
-        *}
     {/if}
 
     {section show=$node.data_map.intro.content.is_empty|not}
