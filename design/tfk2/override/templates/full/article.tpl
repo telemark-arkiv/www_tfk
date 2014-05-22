@@ -22,7 +22,7 @@
         </div>
     </header>
     {if $node.data_map.do_show_image.content}
-        {include uri='design:page_ingressbilde.tpl' node=$node}
+        {include uri='design/page_ingressbilde.tpl' node=$node}
         {*
         {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
         {if $ingressbilde}
