@@ -13,38 +13,39 @@
         <h1>{$node.data_map.name.content|wash()}</h1>
     {/if}
 
-        {if $node.data_map.do_show_image.content}
-             {if $node.data_map.image.has_content}
-                {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
-                {if $ingressbilde}
-                    <div class="top-image">
-                        <picture><!--[if IE 9]><video style="display: none;"><![endif]-->
-                            <source srcset="/{$ingressbilde.data_map.image.content.[responsive_12].full_path" media="(min-width: 886px)">
-                            <source srcset="/{$ingressbilde.data_map.image.content.[responsive_09].full_path" media="(min-width: 600px)">
-                            <source srcset="/{$ingressbilde.data_map.image.content.[responsive_06].full_path" media="(min-width: 400px)">
-                            <source srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path><!--[if IE 9]></video><![endif]-->
-                            <img srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path" alt="Jente på sykkel ved bussholdeplass">
-                        </picture>
-                        <!--img.top-image__img(src="/{$ingressbilde.data_map.image.content.[responsive_12].full_path")-->
-                        <div class="top-image__text-wrapper">
-                            <div class="top-image__text">
-                                {if $node.data_map.image_title.content}
-                                    <h2 class="top-image__header">{attribute_view_gui attribute=$node.data_map.image_title}</h2>
+    {if $node.data_map.do_show_image.content}
+        {if $node.data_map.image.has_content}
+            {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
+            {if $ingressbilde}
+                <div class="top-image">
+                    <picture><!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source srcset="/{$ingressbilde.data_map.image.content.[responsive_12].full_path" media="(min-width: 886px)">
+                        <source srcset="/{$ingressbilde.data_map.image.content.[responsive_09].full_path" media="(min-width: 600px)">
+                        <source srcset="/{$ingressbilde.data_map.image.content.[responsive_06].full_path" media="(min-width: 400px)">
+                        <source srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path"><!--[if IE 9]></video><![endif]-->
+                        <img srcset="/{$ingressbilde.data_map.image.content.[responsive_04].full_path" alt="{$ingressbilde.data_map.image.content.alternative_text}">
+                    </picture>
+                    <!--img.top-image__img(src="/{$ingressbilde.data_map.image.content.[responsive_12].full_path")-->
+                    <div class="top-image__text-wrapper">
+                        <div class="top-image__text">
+                            {if $node.data_map.image_title.content}
+                                <h2 class="top-image__header">{attribute_view_gui attribute=$node.data_map.image_title}</h2>
+                            {/if}
+                            <div class="top-image__body">
+                                {if $node.data_map.image_text.content}
+                                    {attribute_view_gui attribute=$node.data_map.image_text}
                                 {/if}
-                                <div class="top-image__body">
-                                    {if $node.data_map.image_text.content}
-                                        {attribute_view_gui attribute=$node.data_map.image_text}
-                                    {/if}
-                                    {if $ingressbilde.data_map.foto_byline.content}
-                                        <br /><em>Foto: {$ingressbilde.data_map.foto_byline.content}</em>
-                                    {/if}
-                               </div>
+                                {if $ingressbilde.data_map.foto_byline.content}
+                                    <br /><em>Foto: {$ingressbilde.data_map.foto_byline.content}</em>
+                                {/if}
                             </div>
+                            <a href="/{$ingressbilde.data_map.image.content.[responsive_12].full_path}" data-title="{attribute_view_gui attribute=$node.data_map.image_title}" class="top-image__expand-link js-popup--gallery"><span class="visuallyhidden">Åpne</span></a>
                         </div>
                     </div>
-                {/if}
-             {/if}
+                </div>
+            {/if}
         {/if}
+    {/if}
 
     {if $node.data_map.short_description.has_content}
         <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
