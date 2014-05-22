@@ -100,9 +100,7 @@
         <!-- Header area: END -->
 
         <!-- Here comes main -->
-        <div class="content">
-            <div class="constrained">
-                <main id="main" role="main" tabindex="-1">
+        <main id="main" role="main" tabindex="-1">
 
 
                     {*
@@ -289,8 +287,6 @@
 
 {* This comment will be replaced with actual debug report (if debug is on). *}
 <!--DEBUG_REPORT-->
-        </div>
-    </div>
     <!-- Footer script area: START -->
     {include uri='design:page_footer_script.tpl'}
     <!-- Footer script area: END -->
