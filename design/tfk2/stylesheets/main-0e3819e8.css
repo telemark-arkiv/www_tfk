@@ -1865,9 +1865,9 @@ main:focus, main:target,
    * 1. Double background hack to make old browser load the png (http://css-tricks.com/using-svg/)
    *    Known issue with Android 2-versions which support multiple background but not svg-content.
    */
-  background-image: url("../img/header/background.png");
+  background-image: url("../images/header/background.png");
   /* 1 */
-  background-image: url("../img/header/background.svg"), none;
+  background-image: url("../images/header/background.svg"), none;
   /* 1 */
 }
 
@@ -2843,9 +2843,9 @@ main:focus, main:target,
 .page-header {
   background-color: #dfe5ec;
   background-color: rgba(121, 163, 208, 0.15);
-  background-image: url("../img/header/background.png");
+  background-image: url("../images/header/background.png");
   /* 2 */
-  background-image: url("../img/header/background.svg"), none;
+  background-image: url("../images/header/background.svg"), none;
   /* 2 */
   background-repeat: no-repeat;
   z-index: 10;
