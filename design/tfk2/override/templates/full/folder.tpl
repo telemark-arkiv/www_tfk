@@ -12,7 +12,7 @@
     {if $node.data_map.show_name.content}
         <h1>{$node.data_map.name.content|wash()}</h1>
     {/if}
-
+    {*
     {if $node.data_map.do_show_image.content}
         {if $node.data_map.image.has_content}
             {def $ingressbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
@@ -46,6 +46,7 @@
             {/if}
         {/if}
     {/if}
+    *}
 
     {if $node.data_map.short_description.has_content}
         <div class="byline">{attribute_view_gui attribute=$node.data_map.short_description}</div>
