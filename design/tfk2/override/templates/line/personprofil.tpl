@@ -4,7 +4,7 @@
 <div class="media item item--horizontal">
     {if $profilbilde}
         <div class="media__img">
-            <img src="/{$profilbilde.data_map.image.content.[responsive_01].full_path}" alt="{$node.data_map.firstname.content} {$node.data_map.lastname.content}">
+            <img src="/{$profilbilde.data_map.image.content.[responsive_02].full_path}" alt="{$node.data_map.firstname.content} {$node.data_map.lastname.content}">
         </div>
     {/if}
     <div class="media__bd">
