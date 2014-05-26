@@ -92,9 +92,13 @@
                                                                      ) )
                         }
 
-                        {foreach $articles as $article }
-                          {node_view_gui content_node=$article view='line'}
-                        {/foreach}
+                        {if $articles}
+                            <div class="grid {if $section_added}grid--6{else}grid--9{/if}">
+                                {foreach $articles as $article }
+                                    {node_view_gui content_node=$article view='line' section_added=$section_added}
+                                {/foreach}
+                            </div>
+                        {/if}
 
                         {foreach $employees as $employee }
                           {node_view_gui content_node=$employee view='line'}
