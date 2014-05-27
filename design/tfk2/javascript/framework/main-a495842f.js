@@ -1,4 +1,4 @@
-/*! telemark-frontend - v0.0.0 - 2014-05-26 */var svgeezy = function() {
+/*! telemark-frontend - v0.0.0 - 2014-05-27 */var svgeezy = function() {
     return {
         init: function(a, b) {
             this.avoid = a || !1, this.filetype = b || "png", this.svgSupport = this.supportsSvg(), 
@@ -486,7 +486,7 @@ window.grunticon = function(a) {
 };
 
 (function(a) {
-    var b = "/extension/www_tfk/design/tfk2/images/icons/";
+    var b = "//localhost:9000/img/icons/";
     a([ b + "icons.data.svg.css", b + "icons.data.png.css", b + "icons.fallback.css" ]);
 })(grunticon);
 
