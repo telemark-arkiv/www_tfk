@@ -8,7 +8,7 @@
   {/if}
 {/foreach}
 
-<div class="main__center">
+<div class="{if $section_added}main__center{else}main__center-right{/if}">
     {if $node.data_map.show_name.content}
         <h1>{$node.data_map.name.content|wash()}</h1>
     {/if}
