@@ -17,14 +17,13 @@
         {foreach $slides as $slide}
             {def $bilde=fetch( 'content', 'object', hash( 'remote_id', $slide.data_map.image.content.remote_id ) )}
             <li class="grid__item grid__item--2-6 item">
-                <a href="/{$bilde.data_map.image.content.[responsive_12].full_path}" data-title="" class="js-popup--gallery">
+                <a href="/{$bilde.data_map.image.content.[responsive_12].full_path}"{if $slide.data_map.show_image_name.content}{if $slide.data_map.name.content} data-title="{attribute_view_gui attribute=$slide.data_map.name}"{/if}{/if}{if $slide.data_map.show_image_description.content}{if $slide.data_map.description.content} data-caption="{attribute_view_gui attribute=$slide.data_map.description}"{/if}{/if}{if $slide.data_map.show_photographer.content}{if $bilde.data_map.foto_byline.content} data-credit="Foto: {attribute_view_gui attribute=$bilde.data_map.foto_byline}"{/if}{/if}  class="js-popup--gallery">
                     <img src="/{$bilde.data_map.image.content.[montage].full_path}" alt="{$slide.data_map.image.content.alternative_text}">
                 </a>
             </li>
         {/foreach}
     </ul>
 </div>
-
 
 {*
 <div class="text-holder">
