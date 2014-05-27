@@ -1,9 +1,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/extension/www_tfk/design/tfk2/javascript/framework/vendor/jquery-1.10.2.min.js"><' + '/script>');</script>
-<script src="/extension/www_tfk/design/tfk2/javascript/framework/main-212144ac.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript//framework/slider-1454d67b.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript//framework/tabs-f1a2efe2.js"></script>
-<script src="/extension/www_tfk/design/tfk2/javascript//framework/popup-7aa71a6a.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript/framework/main-a495842f.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/slider-4edfe34a.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/tabs-a5edf509.js"></script>
+<script src="/extension/www_tfk/design/tfk2/javascript//framework/popup-891a57d2.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/angular-resource-1.0.1.min.js"></script>
 <script src="/extension/www_tfk/design/tfk2/javascript/tfk-recruitment-app.js"></script>

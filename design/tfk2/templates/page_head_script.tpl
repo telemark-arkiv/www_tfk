@@ -40,7 +40,7 @@
       // Picture element HTML5 shiv
       document.createElement( "picture" );
     </script>
-    <script src="/extension/www_tfk/design/tfk2/javascript/framework/picturefill-8a9b69df.js"></script>
+    <script src="/extension/www_tfk/design/tfk2/javascript/framework/picturefill-a7fc1440.js"></script>
     <noscript>
       <link href="/extension/www_tfk/design/tfk2/images/icons/icons.fallback.css" rel="stylesheet">
     </noscript>
