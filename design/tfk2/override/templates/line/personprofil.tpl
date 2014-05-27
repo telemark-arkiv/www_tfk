@@ -3,7 +3,11 @@
 <div class="{if $node.data_map.show_compact.content}grid__item grid__item--3-6 {/if}media item item--horizontal">
     {if $profilbilde}
         <div class="media__img">
-            <img src="/{$profilbilde.data_map.image.content.[responsive_02].full_path}" alt="{$node.data_map.firstname.content} {$node.data_map.lastname.content}">
+            {if $node.data_map.show_compact.content}
+                <img src="/{$profilbilde.data_map.image.content.[responsive_01].full_path}" alt="{$node.data_map.firstname.content} {$node.data_map.lastname.content}">
+            {else}
+                <img src="/{$profilbilde.data_map.image.content.[responsive_02].full_path}" alt="{$node.data_map.firstname.content} {$node.data_map.lastname.content}">
+            {/if}
         </div>
     {/if}
     <div class="media__bd">
