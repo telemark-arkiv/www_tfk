@@ -1,6 +1,6 @@
 {def $profilbilde=fetch( 'content', 'object', hash( 'remote_id', $node.data_map.image.content.remote_id ) )}
 
-<div class="{if $node.data_map.show_compact.content}grid__item grid__item--3-6 {/if}media item item--horizontal">
+<div class="{if $node.data_map.show_compact.content}grid__item {if $section_added}grid__item--3-6{else}grid__item--3-9{/if} {/if}media item item--horizontal">
     {if $profilbilde}
         <div class="media__img">
             {if $node.data_map.show_compact.content}
