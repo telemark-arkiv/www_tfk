@@ -37,35 +37,8 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-                {*
-                    <div class="slide">
-                        <div class="slide-box">
-                            {if $kampanjebilde}
-                                <a href={$this_kampanjeelement_url} target="{$this_kampanjeelement_target}">
-                                    <img src="/{$kampanjebilde.data_map.image.content.[ingress_smal].full_path}" alt="{$kampanjeelement.data_map.title.content}" style="width: 100%;"/>
-                                </a>
-                            {else}
-                                <a href={$this_kampanjeelement_url} target="{$this_kampanjeelement_target}"><img src="http://placeholder.it/560x250&text=placeholder" alt="" style="width: 100%;"/></a>
-                            {/if}
-                            <div class="text-area brown">
-                                <div class="frame-text">
-                                    <div class="holder">
-                                        <strong class="title">{$kampanjeelement.data_map.title.content}</strong>
-                                        <p>{$kampanjeelement.data_map.text.content}</p>
-                                     </div>
-                                     <a href={$this_kampanjeelement_url} target="{$this_kampanjeelement_target}" class="more">{$kampanjeelement.data_map.url.data_text}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 *}
                 </a>
             </li>
         {/foreach}
     </ul>
-
  </div>
