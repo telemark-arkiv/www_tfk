@@ -17,6 +17,11 @@
     {def $show_from_level = 3}
 {/if}
 
+{* Om vi er under VRI -Telemark*}
+{if $module_result.path[4][node_id]|eq(9791)}
+    {def $show_from_level = 4}
+{/if}
+
 
 {if $menuitems|count|gt(0)}
     <nav role="navigation" class="main__left">
